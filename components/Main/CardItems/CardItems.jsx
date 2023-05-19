@@ -1,6 +1,4 @@
-"use client"
-import React from 'react';
-import CardBlock from "@/components/CardBlock/CardBlock";
+import CardBlock from "@/components/Main/CardBlock/CardBlock";
 import {imageCard} from "@/images/Main";
 
 const CardItems = () => {
@@ -46,7 +44,7 @@ const CardItems = () => {
         }
     ]
     return (
-        <section style={{maxWidth: '290px', margin: '0 auto'}}>
+        <section className='max-w-[290px] my-0 mx-auto'>
             {
                 data.map((item) => (
                     <CardBlock key={item.id} property={item}/>

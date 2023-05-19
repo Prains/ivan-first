@@ -1,9 +1,7 @@
-"use client"
-import React from 'react';
 import {logoHeader} from "@/images/Main";
 import Image from "next/image";
 import {Button, Input, Flex, Menu, MenuButton, MenuList, MenuItem, Box} from '@chakra-ui/react'
-import {MenuIcon} from "../../../ivan-first2/images/icons/Main";
+import {MenuIcon} from "../../../ivan-first/images/icons/Main";
 
 
 const Header = () => {
