@@ -5,6 +5,7 @@ import PlaceReviewsnTime from "@/components/Place/PlaceReviewsnTime/PlaceReviews
 import PlacePriceNOrder from "@/components/Place/PlacePriceNOrder/PlacePriceNOrder";
 import PlaceDescription from "@/components/Place/PlaceDescription/PlaceDescription";
 import PlaceUserOwner from "@/components/Place/PlaceUserOwner/PlaceUserOwner";
+import Footer from "@/components/Footer/Footer";
 
 const Place = () => {
   return (
@@ -19,6 +20,7 @@ const Place = () => {
           <PlaceUserOwner />
         </div>
       </section>
+      <Footer />
     </main>
   );
 };
