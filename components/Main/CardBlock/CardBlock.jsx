@@ -1,11 +1,12 @@
+"use client"
 import { Box } from "@chakra-ui/react";
-import {StarIcon} from "@chakra-ui/icons"
 import Link from "next/link";
+import {StarIcon} from "@chakra-ui/icons";
 const CardBlock = ({property}) => {
     return (
         <Link href='/'>
             <Box as='div' background='#EBF8FF' maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' marginBottom='24px'>
-                <Box style={{ backgroundImage: `url(../../../images/Main/imageCard.png)`}} as='div' position="relative" width='290px' height='140px' backgroundSize='cover' >
+                <Box style={{backgroundImage:`url(${property.imageUrl.src})`}} as='div' position="relative" width='290px' height='140px' backgroundSize='cover' >
                     <Box as='div' bgColor='rgba(0,0,0, 0.6)' padding='4px' borderRadius='10px' position='absolute' right='8px' bottom='6px' display='flex' mt='2' alignItems='center'>
                         {Array(5)
                             .fill('')

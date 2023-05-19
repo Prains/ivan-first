@@ -1,3 +1,4 @@
+"use client"
 import CardBlock from "@/components/Main/CardBlock/CardBlock";
 import {imageCard} from "@/images/Main";
 

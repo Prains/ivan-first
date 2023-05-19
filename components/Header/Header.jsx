@@ -1,3 +1,4 @@
+"use client"
 import {logoHeader} from "@/images/Main";
 import Image from "next/image";
 import {Button, Input, Flex, Menu, MenuButton, MenuList, MenuItem, Box} from '@chakra-ui/react'
@@ -6,14 +7,14 @@ import {MenuIcon} from "../../../ivan-first/images/icons/Main";
 
 const Header = () => {
     return (
-        <header style={{background: "#0E1726"}} >
+        <header className='max-w-[320px] mx-auto my-0' style={{background: "#0E1726"}} >
            <Flex margin='0 auto' maxWidth="290px" justifyContent="space-between" alignItems="flex-end">
                <Image src={logoHeader} alt={'Логотип сайта Иван-1'} />
                <Button width='80px' height='32px' className='bg-white'
                >Войти
                </Button>
            </Flex>
-            <Flex paddingBottom='12px' margin='12px auto' maxWidth="290px" justifyContent="space-between" alignItems="center">
+            <Flex paddingBottom='12px' margin='12px auto' marginBottom='0px' maxWidth="290px" justifyContent="space-between" alignItems="center">
                 <Input width='222px' color='#D9D9D9' borderColor="#3182CE" placeholder="Placeholder" />
                 <Menu>
                     <MenuButton>
