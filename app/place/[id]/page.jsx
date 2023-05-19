@@ -24,7 +24,6 @@ const Place = () => {
           <PlaceUserOwner />
         </div>
       </section>
-      <Footer />
     </main>
   );
 };
