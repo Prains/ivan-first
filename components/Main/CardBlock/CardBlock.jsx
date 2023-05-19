@@ -1,5 +1,3 @@
-"use client"
-import React from 'react';
 import { Box } from "@chakra-ui/react";
 import {StarIcon} from "@chakra-ui/icons"
 import Link from "next/link";
