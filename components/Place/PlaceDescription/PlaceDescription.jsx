@@ -1,7 +1,7 @@
 const PlaceDescription = () => {
   return (
     <article className="mb-3">
-      <h5 className="text-[18px]">Описание:</h5>
+      <h2 className="text-[18px]">Описание:</h2>
       <p className="">
         Творческий и деловой квартал, где открыты мастерские, дизайнерские и
         архитектурные бюро, шоу-румы, магазины, а также организована
