@@ -11,7 +11,7 @@ import ArrowBack from "@/components/ui/ArrowBack/ArrowBack";
 const Place = () => {
   return (
     <main>
-      <section className="bg-[#EBF8FF] rounded-xl flex-center-col">
+      <section className="bg-[#EBF8FF] rounded-xl flex-center-col z-10 relative">
         <div className="relative w-full">
           <ArrowBack className="top-1 left-1" />
           <Image src={bgPlace} alt="Artplay" className="w-full" />
