@@ -1,17 +1,17 @@
-import Footer from "@/components/Footer/Footer";
 import ArrowBack from "@/components/ui/ArrowBack/ArrowBack";
 
 const PlaceMap = () => {
   return (
     <main>
       <section>
-        <div className="relative">
+        <div className="relative min-h-[75vh]">
           <ArrowBack className="top-1 left-1" />
           <iframe
             src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae0b0022645a6c40fee5c51227945eb7b699e63822f7a54c42730b1f07e2b47a3&amp;source=constructor"
             width="100%"
-            height="450px"
+            height="100%"
             frameborder="0"
+            className="w-full h-full absolute top-0 left-0"
           ></iframe>
         </div>
         <article className="flex-center bg-[#EBF8FF] rounded-xl z-10 relative mt-[-7px] w-full">
