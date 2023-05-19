@@ -5,7 +5,7 @@ const PlaceUserOwner = () => {
   return (
     <article className="flex items-center justify-start gap-[10px] mb-5">
       <Image src={userIcon} alt="человечек в сером кружке" />
-      <p className="flex-center-col items-start">
+      <p className="flex-center-col items-start font-normal">
         Пользо
         <span>Пользователь</span>
       </p>

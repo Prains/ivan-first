@@ -5,7 +5,6 @@ import PlaceReviewsnTime from "@/components/Place/PlaceReviewsnTime/PlaceReviews
 import PlacePriceNOrder from "@/components/Place/PlacePriceNOrder/PlacePriceNOrder";
 import PlaceDescription from "@/components/Place/PlaceDescription/PlaceDescription";
 import PlaceUserOwner from "@/components/Place/PlaceUserOwner/PlaceUserOwner";
-import Footer from "@/components/Footer/Footer";
 import ArrowBack from "@/components/ui/ArrowBack/ArrowBack";
 
 const Place = () => {
