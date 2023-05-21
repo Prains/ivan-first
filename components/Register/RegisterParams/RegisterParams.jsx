@@ -1,5 +1,6 @@
 "use client";
-import IsolatedAuthInput from "@/components/ui/IsolatedAuthInput/IsolatedAuthInput";
+import IsolatedInput from "@/components/ui/IsolatedInput/IsolatedInput";
+import { inputFLData, inputULData } from "./RegisterParamsData";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -46,55 +47,19 @@ const RegisterParams = ({ children }) => {
             </TabList>
             {children}
             <TabPanels>
-                <TabPanel className="p-0" id="UL">
-                    <IsolatedAuthInput placeholder="ФИО" />
-                    <IsolatedAuthInput
-                        className="mt-[20px]"
-                        placeholder="Почта"
-                    />
-                    <IsolatedAuthInput
-                        className="mt-[20px]"
-                        placeholder="Телефон"
-                    />
-                    <IsolatedAuthInput
-                        className="mt-[20px]"
-                        placeholder="Название юр. лица"
-                    />
-                    <IsolatedAuthInput
-                        className="mt-[20px]"
-                        placeholder="ИНН"
-                    />
-                    <IsolatedAuthInput
-                        className="mt-[20px]"
-                        placeholder="Должность"
-                    />
-                    <IsolatedAuthInput
-                        className="mt-[20px]"
-                        placeholder="Пароль"
-                    />
-                    <IsolatedAuthInput
-                        className="mt-[20px]"
-                        placeholder="Повторите пароль"
-                    />
+                <TabPanel className="p-0 flex-center-col gap-y-5" id="UL">
+                    {
+                        inputULData.map((input) => {
+                            return (<IsolatedInput key={input.id} {...input} />)
+                        })
+                    }
                 </TabPanel>
-                <TabPanel className="p-0" id="FL">
-                    <IsolatedAuthInput placeholder="ФИО" />
-                    <IsolatedAuthInput
-                        className="mt-[20px]"
-                        placeholder="Почта"
-                    />
-                    <IsolatedAuthInput
-                        className="mt-[20px]"
-                        placeholder="Телефон"
-                    />
-                    <IsolatedAuthInput
-                        className="mt-[20px]"
-                        placeholder="Пароль"
-                    />
-                    <IsolatedAuthInput
-                        className="mt-[20px]"
-                        placeholder="Повторите пароль"
-                    />
+                <TabPanel className="p-0 flex-center-col gap-y-5" id="FL">
+                    {
+                        inputFLData.map((input) => {
+                            return (<IsolatedInput key={input.id} {...input} />)
+                        })
+                    }
                 </TabPanel>
             </TabPanels>
         </Tabs>

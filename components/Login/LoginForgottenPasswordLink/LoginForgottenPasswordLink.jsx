@@ -1,5 +1,4 @@
-"use client"
-import { Link } from '@chakra-ui/react'
+import Link from "next/link";
 
 const LoginForgottenPasswordLink = ({ restorePasswordLink }) => {
   return ( 

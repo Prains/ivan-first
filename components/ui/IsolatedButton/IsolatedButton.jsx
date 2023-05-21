@@ -7,6 +7,7 @@ const IsolatedButton = ({
   loading,
   colorScheme,
   variant,
+  size,
   children,
 }) => {
   return (
@@ -16,6 +17,7 @@ const IsolatedButton = ({
       loading={loading}
       colorScheme={colorScheme}
       variant={variant}
+      size={size}
     >
       {children}
     </Button>
