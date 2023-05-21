@@ -1,27 +1,23 @@
 import Image from "next/image";
 import { bgPlace } from "@/images/Place";
-import PlaceCommonInfo from "@/components/Place/PlaceCommonInfo/PlaceCommonInfo";
-import PlaceReviewsnTime from "@/components/Place/PlaceReviewsnTime/PlaceReviewsnTime";
-import PlacePriceNOrder from "@/components/Place/PlacePriceNOrder/PlacePriceNOrder";
-import PlaceDescription from "@/components/Place/PlaceDescription/PlaceDescription";
-import PlaceUserOwner from "@/components/Place/PlaceUserOwner/PlaceUserOwner";
 import ArrowBack from "@/components/ui/ArrowBack/ArrowBack";
+import PlaceMobile from "@/components/Place/PlaceMobile/PlaceMobile";
+import PlaceDesktop from "@/components/Place/PlaceDesktop/PlaceDesktop";
 
 const Place = () => {
   return (
-    <main>
-      <section className="bg-[#EBF8FF] rounded-xl flex-center-col z-10 relative">
-        <div className="relative w-full">
-          <ArrowBack className="top-1 left-1" />
-          <Image src={bgPlace} alt="Artplay" className="w-full" />
+    <main className="lg:mt-11 text-[#000] lg:text-white">
+      <section className="bg-[#EBF8FF] lg:bg-transparent rounded-xl flex-center-col z-10 relative">
+        <div className="relative w-full lg:w-[86%]">
+          <ArrowBack className="top-1 left-1 lg:hidden" />
+          <Image
+            src={bgPlace}
+            alt="Artplay"
+            className="w-full lg:max-h-[504px]"
+          />
         </div>
-        <div className="w-[91%] my-0 mx-auto">
-          <PlaceCommonInfo />
-          <PlaceReviewsnTime />
-          <PlacePriceNOrder />
-          <PlaceDescription />
-          <PlaceUserOwner />
-        </div>
+        <PlaceMobile />
+        <PlaceDesktop />
       </section>
     </main>
   );
