@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_reviews_reviews",
+  "info": {
+    "displayName": "review",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "datePublished": {
+      "type": "date",
+      "required": true,
+      "unique": true
+    },
+    "ownerId": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "rate": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}
