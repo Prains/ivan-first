@@ -4,33 +4,32 @@ import ArrowBack from "@/components/ui/ArrowBack/ArrowBack";
 import AuthHeader from "@/components/Auth/AuthHeader/AuthHeader";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 
-
 const Register = () => {
-  return (
-    <main>
-        <section
-            className="bg-[#0C1622] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover flex-start-col min-h-[388px]"
-        >
-            <ArrowBack className="top-1 left-1 z-30" />
-            <div className="w-[220px] flex-start-col m-auto">
-              <AuthHeader />
-              <div className="flex-col w-[200px] mt-[16px] mx-auto">
-              <RegisterParams>
-                <RegisterUserClassification />
-              </RegisterParams>
-              <IsolatedButton 
-                className="text-sm font-medium text-white mt-[40px] rounded w-full px-[12px] placeholder:text-[#A0AEC0]"
-                size="sm"
-                variant="outline" 
-              >
-                Зарегистрироваться
-              </IsolatedButton>
-              </div>
-              
-            </div>
-        </section>
-    </main>
-);
-}
- 
+    return (
+        <main>
+            <section
+                className="bg-[#0C1622] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover flex-start-col min-h-[388px] pb-[60px]
+            lg:min-h-[536px] lg:bg-bgAuth-desktop lg:bg-auto lg:pb-[140px]"
+            >
+                <ArrowBack className="top-1 left-1 z-30 lg:hidden" />
+                <div
+                    className="w-[225px] flex-start-col m-auto
+              lg:w-[360px]"
+                >
+                    <AuthHeader />
+                    <div
+                        className="flex-center-col w-[200px] mt-[16px] mx-auto
+                lg:w-[360px] lg:mt-[24px]"
+                    >
+                        <RegisterParams>
+                            <RegisterUserClassification />
+                        </RegisterParams>
+                        
+                    </div>
+                </div>
+            </section>
+        </main>
+    );
+};
+
 export default Register;

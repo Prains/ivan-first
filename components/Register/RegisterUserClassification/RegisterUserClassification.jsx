@@ -18,19 +18,20 @@ const RegisterUserClassification = () => {
     };
 
     return (
+        <>
         <Tabs
             index={tabIndex}
             onChange={handleTabsChange}
-            className="mt-[12px] mb-[30px]"
+            className="mt-[12px] mb-[30px] lg:mt-[24px] lg:mb-[48px]"
             variant="unstyled"
         >
-            <TabList className="flex justify-between">
+            <TabList className="flex justify-between lg:w-[300px] lg:mx-auto">
                 <Tab
                     onClick={handleTabFirst}
                     className={
                       tabIndex === 0
-                          ? "text-[#E74362] text-sm font-medium p-0 text-right"
-                          : "text-white text-sm font-medium p-0 text-right"
+                          ? "text-[#E74362] text-sm font-medium p-0 text-right lg:text-xl"
+                          : "text-white text-sm font-medium p-0 text-right lg:text-xl"
                   }
                 >
                     Арендодатель
@@ -39,14 +40,15 @@ const RegisterUserClassification = () => {
                     onClick={handleTabSecond}
                     className={
                       tabIndex === 1
-                          ? "text-[#E74362] text-sm font-medium p-0 text-right"
-                          : "text-white text-sm font-medium p-0 text-right"
+                          ? "text-[#E74362] text-sm font-medium p-0 text-right lg:text-xl"
+                          : "text-white text-sm font-medium p-0 text-right lg:text-xl"
                   }
                 >
                     Арендатор
                 </Tab>
             </TabList>
         </Tabs>
+        </>
     );
 };
 

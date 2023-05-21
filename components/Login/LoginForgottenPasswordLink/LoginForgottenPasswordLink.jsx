@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-const LoginForgottenPasswordLink = ({ restorePasswordLink }) => {
+const LoginForgottenPasswordLink = ({ restorePasswordLink, className }) => {
   return ( 
     <Link 
-      className="text-white underline text-sm font-medium"
+      className={className}
       href={restorePasswordLink}
     >
       Забыли пароль?

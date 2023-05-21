@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const IsolatedAuthLink = ({ path, children }) => {
+const IsolatedAuthLink = ({ path, className, children }) => {
     const pathname = usePathname();
 
     return (
@@ -13,7 +13,7 @@ const IsolatedAuthLink = ({ path, children }) => {
                     : "w-full"
             }
         >
-            <Link className="text-xl text-[#fff] font-medium" href={ path }>
+            <Link className="text-xl text-[#fff] font-medium lg:text-4xl" href={ path }>
                 {children}
             </Link>
         </li>
