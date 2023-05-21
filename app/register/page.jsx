@@ -2,7 +2,8 @@ import RegisterParams from "@/components/Register/RegisterParams/RegisterParams"
 import RegisterUserClassification from "@/components/Register/RegisterUserClassification/RegisterUserClassification";
 import ArrowBack from "@/components/ui/ArrowBack/ArrowBack";
 import AuthHeader from "@/components/Auth/AuthHeader/AuthHeader";
-import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
+
+// TODO validation
 
 const Register = () => {
     return (

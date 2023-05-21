@@ -1,7 +1,8 @@
-import LoginForgottenPasswordLink from "@/components/Login/LoginForgottenPasswordLink/LoginForgottenPasswordLink";
 import LoginForm from "@/components/Login/LoginForm/LoginForm";
 import ArrowBack from "@/components/ui/ArrowBack/ArrowBack";
 import AuthHeader from "@/components/Auth/AuthHeader/AuthHeader";
+
+// TODO: validation
 
 const Login = () => {
     return (
@@ -17,11 +18,6 @@ const Login = () => {
                 >
                     <AuthHeader />
                     <LoginForm />
-                    <LoginForgottenPasswordLink
-                        className="text-white underline text-sm font-medium
-                        lg:hidden"
-                        restorePasswordLink="/"
-                    />
                 </div>
             </section>
         </main>
