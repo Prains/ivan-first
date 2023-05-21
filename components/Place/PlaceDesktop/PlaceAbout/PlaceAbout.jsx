@@ -4,7 +4,7 @@ import { starFilled } from "@/images/icons/stars";
 
 const PlaceAbout = () => {
   return (
-    <article className="w-2/3">
+    <section className="w-2/3">
       <h1 className="font-medium text-4xl flex-center justify-between w-full mb-8">
         Artplay
         <span className="text-2xl flex-center gap-3">
@@ -26,7 +26,7 @@ const PlaceAbout = () => {
       <IsolatedTag colorScheme="blue" variant="outline" size="lg">
         Дизайн студия
       </IsolatedTag>
-    </article>
+    </section>
   );
 };
 

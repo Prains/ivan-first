@@ -4,7 +4,7 @@ import PlaceUserOwner from "../../PlaceUserOwner/PlaceUserOwner";
 
 const PlaceOrder = () => {
   return (
-    <article className="w-1/3">
+    <section className="w-1/3">
       <h3 className="font-medium mb-4 text-2xl ">Адрес:</h3>
       <div className="flex-center-col items-start gap-3">
         <p>ул. Нижняя Сыромятническая, д. 10</p>
@@ -22,7 +22,7 @@ const PlaceOrder = () => {
         </IsolatedButton>
       </Link>
       <PlaceUserOwner />
-    </article>
+    </section>
   );
 };
 

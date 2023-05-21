@@ -1,4 +1,6 @@
 import PlaceAbout from "./PlaceAbout/PlaceAbout";
+import PlaceDesktopMap from "./PlaceDesktopMap/PlaceDesktopMap";
+import PlaceDesktopReviews from "./PlaceDesktopReviews/PlaceDesktopReviews";
 import PlaceOrder from "./PlaceOrder/PlaceOrder";
 
 const PlaceDesktop = () => {
@@ -8,6 +10,8 @@ const PlaceDesktop = () => {
         <PlaceAbout />
         <PlaceOrder />
       </div>
+      <PlaceDesktopMap />
+      <PlaceDesktopReviews />
     </section>
   );
 };
