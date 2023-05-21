@@ -4,7 +4,7 @@ import { logo, vk, tg } from "@/images/icons";
 
 const Footer = () => {
   return (
-    <footer className="bg-black mt-[-12px] z-0 relative">
+    <footer className="bg-[#0C1622] z-0 relative">
       <nav className="w-[91%] pt-[28px] pb-1 my-0 mx-auto flex items-start justify-between">
         <ul className="flex-center-col items-start">
           <FooterLink href={"/"}>Главная</FooterLink>
