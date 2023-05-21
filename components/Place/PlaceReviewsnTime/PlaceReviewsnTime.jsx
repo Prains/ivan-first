@@ -13,11 +13,11 @@ const PlaceReviewsnTime = () => {
           <Image src={starFilled} alt="красная звездочка" />
           <Image src={starFilled} alt="красная звездочка" />
         </div>
-        <Link href="/" className="underline text-[#000000]">
+        <Link href="/" className="underline lg:hidden">
           Отзывы
         </Link>
       </div>
-      <p className="flex-center-col items-end text-[#464646]">
+      <p className="flex-center-col items-end text-[#464646] lg:text-inherit">
         пн-пт <span>10:00-22:00</span>
       </p>
     </article>

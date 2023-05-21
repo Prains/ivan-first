@@ -10,11 +10,11 @@ export const metadata = {
 export default function RootLayout({ children, popups }) {
   return (
     <html lang="ru">
-      <body className="font-text text-[#000]">
+      <body className="font-text bg-[#000000] text-white">
         <Providers>
           {children}
           {popups}
-          <Footer/>
+          <Footer />
         </Providers>
       </body>
     </html>
