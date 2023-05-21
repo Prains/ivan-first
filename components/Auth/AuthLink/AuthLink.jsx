@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const AuthLink = ({ path, className, children }) => {
+const AuthLink = ({ path, children }) => {
     const pathname = usePathname();
 
     return (
