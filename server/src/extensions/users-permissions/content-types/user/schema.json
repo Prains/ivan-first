@@ -67,7 +67,30 @@
     },
     "type": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
+    },
+    "userRole": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "places": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::place.place"
+    },
+    "inn": {
+      "type": "integer"
+    },
+    "position": {
+      "type": "string"
+    },
+    "books": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::book.book",
+      "inversedBy": "users"
     }
   }
 }

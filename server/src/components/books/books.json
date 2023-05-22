@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_books_books",
+  "info": {
+    "displayName": "books"
+  },
+  "options": {},
+  "attributes": {
+    "time": {
+      "type": "string",
+      "required": true
+    },
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}
