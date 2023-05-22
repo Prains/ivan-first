@@ -8,7 +8,7 @@ const ArrowBack = ({ className }) => {
 
   return (
     <div
-      className={`bg-[#0E1726]/75 w-[33px] h-[33px] flex-center rounded-md absolute ${className}`}
+      className={`bg-[#0E1726]/75 w-[33px] h-[33px] flex-center z-30 rounded-md absolute ${className}`}
       onClick={() => {
         router.back();
       }}

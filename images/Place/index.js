@@ -1,3 +1,3 @@
-import bgPlace from "./Rectangle 9 (1).png";
+import bgPlace from "./Rectangle 11.png";
 
 export { bgPlace };
