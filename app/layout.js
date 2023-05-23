@@ -2,7 +2,6 @@ import Providers from "@/components/Providers";
 import "./globals.css";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
-import Main from "@/components/Main/Main";
 
 
 export const metadata = {

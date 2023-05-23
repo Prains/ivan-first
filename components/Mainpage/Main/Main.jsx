@@ -1,5 +1,5 @@
-import Banner from "@/components/Banner/Banner";
-import CardsBlock from "@/components/CardsBlock/CardsBlock";
+import Banner from "../Banner/Banner";
+import CardsBlock from "../CardsBlock/CardsBlock";
 
 const Main = () => {
     return (
