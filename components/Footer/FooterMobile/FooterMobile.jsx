@@ -1,6 +1,6 @@
 import FooterLink from "../FooterLink/FooterLink";
 import Logo from "@/components/ui/Logo/Logo";
-import VkIcon from "@/components/ui/vkIcon/vkIcon";
+import VkIcon from "@/components/ui/Icons/vkIcon/vkIcon";
 import TgIcon from "@/components/ui/tgIcon/tgIcon";
 
 const FooterMobile = () => {

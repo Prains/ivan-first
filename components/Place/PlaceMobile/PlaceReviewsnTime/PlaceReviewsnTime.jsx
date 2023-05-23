@@ -1,17 +1,16 @@
-import Image from "next/image";
 import Link from "next/link";
-import { starFilled, emptyStar } from "@/images/icons/stars";
+import { StarIconFilled } from "@/components/ui/Icons";
 
 const PlaceReviewsnTime = () => {
   return (
     <article className="flex-center items-end justify-between mb-4">
       <div className="flex-center gap-3">
         <div className="flex-center items-center gap-[2px]">
-          <Image src={starFilled} alt="красная звездочка" />
-          <Image src={starFilled} alt="красная звездочка" />
-          <Image src={starFilled} alt="красная звездочка" />
-          <Image src={starFilled} alt="красная звездочка" />
-          <Image src={starFilled} alt="красная звездочка" />
+          <StarIconFilled />
+          <StarIconFilled />
+          <StarIconFilled />
+          <StarIconFilled />
+          <StarIconFilled />
         </div>
         <Link href="/" className="underline lg:hidden">
           Отзывы

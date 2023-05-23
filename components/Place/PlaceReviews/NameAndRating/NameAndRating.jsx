@@ -1,5 +1,4 @@
-import { starFilled } from "@/images/icons/stars";
-import Image from "next/image";
+import { StarIconFilled } from "@/components/ui/Icons";
 
 const NameAndRating = () => {
   return (
@@ -9,11 +8,11 @@ const NameAndRating = () => {
         <p className="text-[40px] font-medium">4,0</p>
         <div className="flex-center-col items-start gap-[2px]">
           <div className="flex-center gap-px">
-            <Image src={starFilled} alt="123" />
-            <Image src={starFilled} alt="123" />
-            <Image src={starFilled} alt="123" />
-            <Image src={starFilled} alt="123" />
-            <Image src={starFilled} alt="123" />
+            <StarIconFilled />
+            <StarIconFilled />
+            <StarIconFilled />
+            <StarIconFilled />
+            <StarIconFilled />
           </div>
           <p>на основании 2 оценок</p>
         </div>
