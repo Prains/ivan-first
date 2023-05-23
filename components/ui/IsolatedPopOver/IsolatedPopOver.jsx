@@ -18,8 +18,8 @@ const IsolatedPopOver = ({className}) => {
             <PopoverTrigger className='cursor-pointer'>
                 <Image className={className} src={IconMenu} alt='menu__icon' />
             </PopoverTrigger>
-            <PopoverContent className='xl:w-[964px] lg:w-[650px] md:w-[500px] bg-[#0E1A30] text-[#FFFFFF]'>
-                <PopoverCloseButton className='top-[10px] left-[10px]  scale-[1.5] md:top-[28px] md:left-[450px] lg:left-[610px] xl:left-[920px]'/>
+            <PopoverContent className='hidden md:block xl:w-[964px] lg:w-[650px] md:w-[600px] bg-[#0E1A30] text-[#FFFFFF]'>
+                <PopoverCloseButton className='top-[10px] left-[10px]  scale-[1.5] md:top-[28px] md:left-[550px] lg:left-[610px] xl:left-[920px]'/>
                 <Link className='absolute right-[14px] top-[11px] text-[#70B0DF] block md:hidden text-[14px]' href='/'>Сбросить</Link>
                 <PopoverBody  style={{backgroundImage: `url(${bannerVector.src})`}} className='bg-contain bg-[#0E1A30] rounded-[6px] bg-no-repeat md:flex md:gap-[74px] md:justify-between md:px-[70px] pb-[30px] md:pb-[100px] md:py-[30px]'>
                     <div className='flex-1'>
