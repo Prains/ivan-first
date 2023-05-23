@@ -42,8 +42,8 @@ const IsolatedPopOver = ({className}) => {
                     </div>
                     <div>
                         <div>
-                            <h3 className='mt-[24px] md:mt-0 mb-[20px] md:text-[24px] text-[16px]'>Где искать</h3>
-                            <IsolatedSearch placeholder={'Метро, район, кварталы, жилые массивы'}/>
+                            <h3 className='md:mt-0 mb-[20px] md:text-[24px] text-[16px]'>Где искать</h3>
+                            <IsolatedSearch className='pr-[40px] md:bottom-0 bottom-1' placeholder={'Метро, район, кварталы, жилые массивы'}/>
                         </div>
                         <div className='mt-[20px] md:mt-[46px]'>
                             <h3 className='mb-[20px] md:text-[24px] text-[16px]'>Цена</h3>

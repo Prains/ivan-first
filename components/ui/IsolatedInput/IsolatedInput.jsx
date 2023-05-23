@@ -1,10 +1,14 @@
-'use client'
-import {Input} from '@chakra-ui/react'
+"use client";
+import { Input } from "@chakra-ui/react";
 
-const IsolatedInput = (props) => {
+const IsolatedInput = ({ className, placeholder, size, focusBorderColor }) => {
     return (
-        <Input {...props} placeholder={props.placeholder}/>
-
+        <Input
+            className={className}
+            placeholder={placeholder}
+            size={size}
+            focusBorderColor={focusBorderColor}
+        />
     );
 };
 

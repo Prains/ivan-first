@@ -11,7 +11,7 @@ const Banner = () => {
                 <div className='absolute lg:left-0 md:left-8 lg:top-40 md:top-40 flex flex-col items-center gap-6 '>
                     <IsolatedBannerInput variant={'outline'} colorScheme={'green'} placeholder={'Поиск'}
                                          className=' w-[272px] text-[#D9D9D9] border-gray-200 h-[40px] pr-[40px]'/>
-                    <IsolatedButton className='text-[14px] w-[160px] h-[32px]'>Поиск</IsolatedButton>
+                    <IsolatedButton className='text-[14px] w-[160px] h-[32px] text-[#1A202C]'>Поиск</IsolatedButton>
                 </div>
                 <h1 className='absolute lg:top-40 md:top-40 md:right-10 lg:right-0 text-[#FFFFFF] md:text-[28px] lg:text-[32px] font-bold leading-[40px]'>АГЕНСТВО
                     АРЕНДЫ <br/> КРЕАТИВНЫХ ИНДУСТРИЙ <span

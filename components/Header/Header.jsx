@@ -12,7 +12,7 @@ const Header = () => {
                 <div className='w-full md:w-max flex items-center justify-between mb-2'>
                     <Link href='#' className='w-full flex items-center justify-between'>
                         <Image src={HeaderLogo} alt='header__logo'/>
-                        <IsolatedButton className={'lg: font-[20px] h-[32px] w-[80px] md:hidden'}>Войти</IsolatedButton>
+                        <IsolatedButton className={'lg: font-[20px] h-[32px] w-[80px] md:hidden text-[#1A202C]'}>Войти</IsolatedButton>
                     </Link>
                 </div>
                 <div className='flex gap-4 justify-between'>
@@ -21,8 +21,8 @@ const Header = () => {
                     <IsolatedPopOver className='md:mr-0 mr-[0px] md:scale-125 z-40 cursor-pointer'/>
                 </div>
                 <div className='flex gap-2'>
-                    <IsolatedButton className={'lg: font-[20px] h-[32px] w-[80px] hidden md:block'}>Войти</IsolatedButton>
-                    <IsolatedButton className={'lg: font-[20px] h-[32px] w-[140px] md:block hidden'}>Регистрация</IsolatedButton>
+                    <IsolatedButton className={'lg: font-[20px] h-[32px] w-[80px] hidden md:block text-[#1A202C]'}>Войти</IsolatedButton>
+                    <IsolatedButton className={'lg: font-[20px] h-[32px] w-[140px] md:block hidden text-[#1A202C]'}>Регистрация</IsolatedButton>
                 </div>
             </div>
 
