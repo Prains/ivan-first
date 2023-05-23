@@ -13,7 +13,7 @@ const Place = () => {
           <Image
             src={bgPlace}
             alt="Artplay"
-            className="w-full lg:max-h-[504px]"
+            className="w-full lg:max-h-[504px] lg:max-w-[1104px] lg:my-0 lg:mx-auto"
           />
         </div>
         <PlaceMobile />

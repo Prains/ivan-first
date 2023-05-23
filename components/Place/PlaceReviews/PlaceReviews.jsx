@@ -6,7 +6,7 @@ import NameAndRating from "./NameAndRating/NameAndRating";
 const PlaceReviews = () => {
   return (
     <>
-      <article className="relative">
+      <article className="relative"> 
         <ArrowBack className="top-1 left-1" />
         <Image src={bgPlace} alt="123" className="w-full" />
       </article>
