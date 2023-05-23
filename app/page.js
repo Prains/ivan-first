@@ -1,3 +1,7 @@
+import Main from "@/components/Mainpage/Main/Main";
+
 export default function Home() {
-  return <main className="w-[91%]"></main>;
+  return <main>
+    <Main />
+  </main>;
 }
