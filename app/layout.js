@@ -18,8 +18,3 @@ export default function RootLayout({children, popups}) {
             {children}
             {popups}
             <Footer/>
-        </Providers>
-        </body>
-        </html>
-    );
-}
