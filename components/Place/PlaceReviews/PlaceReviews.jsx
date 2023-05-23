@@ -21,7 +21,7 @@ const PlaceReviews = () => {
   ).reverse();
 
   const lines = Array(5).fill(
-    <li className="relative w-[190px] h-px">
+    <li className="relative w-full h-px">
       <div className="w-2/3 border-[2px] border-[#464646] absolute top-0 h-px"></div>
       <div className="w-full border-[2px] border-[#8E8E8E] h-px"></div>
     </li>
@@ -36,9 +36,9 @@ const PlaceReviews = () => {
       <section className="bg-[#EBF8FF] rounded-b-xl">
         <div className="w-[91%] my-0 mx-auto pt-2 pb-4">
           <NameAndRating />
-          <article className="flex-center gap-3">
+          <article className="flex-center justify-between">
             <ul className="flex-center-col gap-2">{rows}</ul>
-            <ul className="flex-center-col gap-[22px]">{lines}</ul>
+            <ul className="flex-center-col gap-[22px] w-2/3">{lines}</ul>
             <ul className="flex-center-col gap-1">
               <li className="text-[#8E8E8E] text-sm">1</li>
               <li className="text-[#8E8E8E] text-sm">1</li>
