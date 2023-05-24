@@ -14,16 +14,16 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true,
+      "isRequired": true,
       "unique": true
     },
     "description": {
       "type": "richtext",
-      "required": true
+      "isRequired": true
     },
     "ownerId": {
       "type": "integer",
-      "required": true,
+      "isRequired": true,
       "unique": true
     },
     "reviews": {
@@ -33,33 +33,33 @@
     },
     "price": {
       "type": "biginteger",
-      "required": false
+      "isRequired": false
     },
     "tag": {
       "type": "string",
-      "required": true
+      "isRequired": true
     },
     "adress": {
       "type": "string",
-      "required": true
+      "isRequired": true
     },
     "status": {
       "type": "string",
-      "required": false,
+      "isRequired": false,
       "unique": true,
       "default": "pending"
     },
     "photos": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "isRequired": false,
       "allowedTypes": [
         "images"
       ]
     },
     "workingTime": {
       "type": "string",
-      "required": true
+      "isRequired": true
     },
     "books": {
       "type": "relation",

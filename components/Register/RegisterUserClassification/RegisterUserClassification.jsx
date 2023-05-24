@@ -2,15 +2,17 @@
 import { Tabs, TabList, Tab } from "@chakra-ui/react";
 import { useState } from "react";
 
-const RegisterUserClassification = () => {
+const RegisterUserClassification = ({ setUserRole }) => {
     const [tabIndex, setTabIndex] = useState(1);
 
     const handleTabFirst = () => {
         setTabIndex(0);
+        setUserRole('landlord');
     };
 
     const handleTabSecond = () => {
         setTabIndex(1);
+        setUserRole('tennant');
     };
 
     const handleTabsChange = (index) => {
