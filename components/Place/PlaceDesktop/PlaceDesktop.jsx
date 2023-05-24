@@ -5,7 +5,7 @@ import PlaceOrder from "./PlaceOrder/PlaceOrder";
 
 const PlaceDesktop = () => {
   return (
-    <section className="w-[86%] hidden lg:block mt-9">
+    <section className="max-w-[1104px] w-[86%] hidden lg:block mt-9">
       <div className="lg:flex lg:items-start lg:justify-center gap-9">
         <PlaceAbout />
         <PlaceOrder />
