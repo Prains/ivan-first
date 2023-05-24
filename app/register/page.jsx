@@ -22,10 +22,7 @@ const Register = () => {
                         className="flex-center-col w-[200px] mt-[16px] mx-auto
                 lg:w-[360px] lg:mt-[24px]"
                     >
-                        <RegisterParams>
-                            <RegisterUserClassification />
-                        </RegisterParams>
-                        
+                        <RegisterParams />
                     </div>
                 </div>
             </section>

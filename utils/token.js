@@ -2,7 +2,7 @@ class Token {
     setAccessToken(token) {
         localStorage.setItem("access", token);
     }
-    getAccesToken() {
+    getAccessToken() {
         return localStorage.getItem("access");
     }
     logOut() {

@@ -91,6 +91,9 @@
       "relation": "manyToMany",
       "target": "api::book.book",
       "inversedBy": "users"
+    },
+    "organizationName": {
+      "type": "string"
     }
   }
 }
