@@ -8,7 +8,7 @@ import {cardImage} from "@/images/Main";
 const Reviews = () => {
     return (
         <section className='bg-[#0C1622] h-[100vh] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover relative px-[16px] py-[16px] w-full'>
-            <HeaderAccount className='flex items-center justify-between' isVisible='true' text='Оставить отзыв'/>
+            <HeaderAccount isVisible='true' text='Оставить отзыв'/>
             <div className='bg-[#EBF8FF] pt-[14px] px-[11px] pb-[24px] rounded-[6px] mt-[18px]'>
                 <div className='w-full grid grid-cols-5 '>
                     <div className='col-span-1'>

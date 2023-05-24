@@ -39,7 +39,7 @@ const ArchiveBooking = () => {
     ]
     return (
         <section className='bg-[#0C1622] h-[100vh] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover relative px-[16px] py-[16px] w-full'>
-            <HeaderAccount className='flex items-center justify-between' isVisible='true' text='История брони'/>
+            <HeaderAccount isVisible='true' text='История брони'/>
                 <div className='py-[14px] px-[12px] bg-[#EBF8FF] mt-[18px] rounded-[6px] pb-[60px]'>
                     {
                         data.map(item =>   <ArchiveBookingItem key={item.id} title={item.title} image={item.image} date={item.date}/>)

@@ -45,7 +45,7 @@ const ViewBooking = () => {
 
     return (
         <section className='bg-[#0C1622] h-[100vh] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover relative px-[16px] py-[16px] w-full'>
-            <HeaderAccount className='flex items-center justify-between' isVisible='true' text='Просмотр брони'/>
+            <HeaderAccount isVisible='true' text='Просмотр брони'/>
             <div className='bg-[#EBF8FF] mt-[18px]'>
                 <IsolatedAccordion isActive={false} isPending={false} data={activeArr} titleAccordeon={'Заявки на бронь'}/>
                 <IsolatedAccordion isActive={true} isPending={true} data={successArr} titleAccordeon={'Подтвержденная бронь'}/>

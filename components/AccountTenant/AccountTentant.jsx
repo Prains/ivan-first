@@ -8,7 +8,6 @@ import HeaderAccount from "@/components/HeaderAccount/HeaderAccount";
 const AccountTentant = () => {
     return (
         <section className='bg-[#0C1622] h-[100vh] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover relative px-[16px] py-[16px]  w-full'>
-            <HeaderAccount className='flex items-center justify-between'/>
             <div className='flex justify-center mt-[32px]'>
                 <Image className='h-[64px] w-[64px]' src={userRed} alt='красный кружочек с иконкой пользователя внутри'></Image>
             </div>
@@ -21,7 +20,6 @@ const AccountTentant = () => {
                 <IsolatedButton className='bg-transparent border-2 border-white rounded-[6px] mt-[16px]'>История брони</IsolatedButton>
 
             </div>
-            <FooterAccount className='w-[95%] absolute bottom-2 h-max flex flex-col justify-between' />
         </section>
     );
 };
