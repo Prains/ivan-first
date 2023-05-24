@@ -1,7 +1,7 @@
 import { Logo } from "@/components/ui/Icons";
 import FooterLink from "../FooterLink/FooterLink";
 import VkIcon from "@/components/ui/Icons/vkIcon/vkIcon";
-import TgIcon from "@/components/ui/tgIcon/tgIcon";
+import { TgIcon } from "@/components/ui/Icons";
 
 const FooterDesktop = () => {
   return (
