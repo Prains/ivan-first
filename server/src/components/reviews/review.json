@@ -8,21 +8,21 @@
   "attributes": {
     "content": {
       "type": "richtext",
-      "required": true
+      "isRequired": true
     },
     "datePublished": {
       "type": "date",
-      "required": true,
+      "isRequired": true,
       "unique": true
     },
     "ownerId": {
       "type": "integer",
-      "required": true,
+      "isRequired": true,
       "unique": true
     },
     "rate": {
       "type": "integer",
-      "required": true
+      "isRequired": true
     }
   }
 }

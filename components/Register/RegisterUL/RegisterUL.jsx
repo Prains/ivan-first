@@ -23,7 +23,7 @@ const RegisterUL = ({ userRole }) => {
             focusBorderColor: "#E74362",
             label: "ФИО:",
             htmlType: "text",
-            required: true,
+            isRequired: true,
             onChange: (e) => {
                 usernameChange(e);
             },
@@ -36,7 +36,8 @@ const RegisterUL = ({ userRole }) => {
             focusBorderColor: "#E74362",
             label: "Почта:",
             htmlType: "email",
-            required: true,
+            isRequired: true,
+            minLength: "6",
             onChange: (e) => {
                 emailChange(e);
             },
@@ -61,7 +62,7 @@ const RegisterUL = ({ userRole }) => {
             focusBorderColor: "#E74362",
             label: "Название юр. лица:",
             htmlType: "text",
-            required: true,
+            isRequired: true,
             onChange: (e) => {
                 organizationNameChange(e);
             },
@@ -74,7 +75,7 @@ const RegisterUL = ({ userRole }) => {
             focusBorderColor: "#E74362",
             label: "ИНН:",
             htmlType: "number",
-            required: true,
+            isRequired: true,
             onChange: (e) => {
                 innChange(e);
             },
@@ -87,7 +88,7 @@ const RegisterUL = ({ userRole }) => {
             focusBorderColor: "#E74362",
             label: "Должность:",
             htmlType: "text",
-            required: true,
+            isRequired: true,
             onChange: (e) => {
                 positionChange(e);
             },
@@ -100,7 +101,8 @@ const RegisterUL = ({ userRole }) => {
             focusBorderColor: "#E74362",
             label: "Пароль:",
             htmlType: "password",
-            required: true,
+            isRequired: true,
+            minLength: "6",
             onChange: (e) => {
                 passwordChange(e);
             },
@@ -113,7 +115,7 @@ const RegisterUL = ({ userRole }) => {
             focusBorderColor: "#E74362",
             label: "Повторите пароль:",
             htmlType: "password",
-            required: true,
+            isRequired: true,
             onChange: (e) => {
               confirmPasswordChange(e);
             },

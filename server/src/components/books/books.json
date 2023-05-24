@@ -7,19 +7,19 @@
   "attributes": {
     "time": {
       "type": "string",
-      "required": true
+      "isRequired": true
     },
     "startDate": {
       "type": "date",
-      "required": true
+      "isRequired": true
     },
     "endDate": {
       "type": "date",
-      "required": true
+      "isRequired": true
     },
     "status": {
       "type": "string",
-      "required": true,
+      "isRequired": true,
       "unique": true
     }
   }

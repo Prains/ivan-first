@@ -26,7 +26,7 @@ const RegisterFL = ({ userRole }) => {
             focusBorderColor: "#E74362",
             label: "ФИО:",
             htmlType: "text",
-            required: true,
+            isRequired: true,
             onChange: (e) => {
                 usernameChange(e);
             },
@@ -39,7 +39,8 @@ const RegisterFL = ({ userRole }) => {
             focusBorderColor: "#E74362",
             label: "Почта:",
             htmlType: "email",
-            required: true,
+            minLength: "6",
+            isRequired: true,
             onChange: (e) => {
                 emailChange(e);
             },
@@ -64,7 +65,8 @@ const RegisterFL = ({ userRole }) => {
             focusBorderColor: "#E74362",
             label: "Пароль:",
             htmlType: "password",
-            required: true,
+            minLength: "6",
+            isRequired: true,
             onChange: (e) => {
                 passwordChange(e);
             },
@@ -77,7 +79,7 @@ const RegisterFL = ({ userRole }) => {
             focusBorderColor: "#E74362",
             label: "Повторите пароль:",
             htmlType: "password",
-            required: true,
+            isRequired: true,
             onChange: (e) => {
                 confirmPasswordChange(e);
             },

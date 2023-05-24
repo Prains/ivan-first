@@ -11,7 +11,7 @@ import { useState } from "react";
 const LoginForm = () => {
     const [error, setError] = useState(false);
     const authHandling = useAuth();
-    
+
     const [email, emailChange] = useInput("");
     const [password, passwordChange] = useInput("");
 
@@ -23,6 +23,8 @@ const LoginForm = () => {
             focusBorderColor: "#E74362",
             label: "Почта:",
             htmlType: "email",
+            isRequired: true,
+            minLength: "6",
             onChange: (e) => {
                 emailChange(e);
             },
@@ -35,6 +37,8 @@ const LoginForm = () => {
             focusBorderColor: "#E74362",
             label: "Пароль:",
             htmlType: "password",
+            isRequired: true,
+            minLength: "6",
             onChange: (e) => {
                 passwordChange(e);
             },
