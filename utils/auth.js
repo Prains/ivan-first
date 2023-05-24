@@ -9,19 +9,21 @@ class Auth {
       Authorization: apiToken,
     };
   }
-  register(name, email, password) {
-    return fetch(`${links.backend}/api/auth/local/register`, {
+  register(username, email, userRole, type, password) {
+    return fetch(`${links.backend}/auth/local/register`, {
       method: "post",
       headers: this._headers,
       body: JSON.stringify({
-        username: name,
+        username: username,
         email: email,
+        userRole: userRole,
+        type: type,
         password: password,
       }),
     }).then((res) => res.json());
   }
   login(email, password) {
-    return fetch(`${links.backend}/api/auth/local`, {
+    return fetch(`${links.backend}/auth/local`, {
       method: "post",
       headers: this._headers,
       body: JSON.stringify({
@@ -31,8 +33,8 @@ class Auth {
     }).then((res) => res.json());
   }
   checkUser() {
-    const access = token.getAccesToken();
-    return fetch(`${links.backend}/api/users/me`, {
+    const access = token.getAccessToken();
+    return fetch(`${links.backend}/users/me`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${access}`,

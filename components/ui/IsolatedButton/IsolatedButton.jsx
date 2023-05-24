@@ -2,6 +2,7 @@
 import { Button } from "@chakra-ui/react";
 
 const IsolatedButton = ({
+  type,
   className,
   onClick,
   loading,
@@ -12,6 +13,7 @@ const IsolatedButton = ({
 }) => {
   return (
     <Button
+      type={type}
       className={className}
       onClick={onClick}
       loading={loading}

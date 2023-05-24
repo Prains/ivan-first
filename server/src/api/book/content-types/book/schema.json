@@ -15,7 +15,7 @@
       "type": "component",
       "repeatable": false,
       "component": "books.books",
-      "required": true
+      "isRequired": true
     },
     "users": {
       "type": "relation",
