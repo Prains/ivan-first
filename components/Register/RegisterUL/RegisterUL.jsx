@@ -1,10 +1,16 @@
 "use client";
+import useAuth from "@/hooks/useAuth";
+import { FormControl, FormErrorMessage } from "@chakra-ui/react";
+import { useState } from "react";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import IsolatedInput from "@/components/ui/IsolatedInput/IsolatedInput";
 import useInput from "@/hooks/useInput";
 import auth from "@/utils/auth";
 
 const RegisterUL = ({ userRole }) => {
+    const [error, setError] = useState(false);
+    const authHandling = useAuth();
+
     const type = "organization";
     const [username, usernameChange] = useInput("");
     const [email, emailChange] = useInput("");
@@ -117,7 +123,7 @@ const RegisterUL = ({ userRole }) => {
             htmlType: "password",
             isRequired: true,
             onChange: (e) => {
-              confirmPasswordChange(e);
+                confirmPasswordChange(e);
             },
             value: confirmPassword,
         },
@@ -125,28 +131,39 @@ const RegisterUL = ({ userRole }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        auth.register(username, email, userRole, type, password);
+        auth.register(username, email, userRole, type, password).then((res) => {
+            authHandling(setError, res);
+        });
     };
 
     return (
-        <form
-            onSubmit={handleSubmit}
-            name="registerFormUL"
-            className="p-0 flex-center-col gap-y-5 lg:gap-y-8"
-        >
-            {inputULData.map((input) => {
-                return <IsolatedInput key={input.label} {...input} />;
-            })}
-            <IsolatedButton
-                type="submit"
-                className="text-sm font-medium text-white mt-[20px] hover:bg-transparent rounded w-full px-[12px] placeholder:text-[#A0AEC0]
-                lg:w-[253px] lg:h-[48px] lg:mx-auto lg:mt-0"
-                size="sm"
-                variant="outline"
+        <FormControl isInvalid={error}>
+            <form
+                onSubmit={handleSubmit}
+                name="registerFormUL"
+                className="p-0 flex-center-col gap-y-5 lg:gap-y-8"
             >
-                Зарегистрироваться
-            </IsolatedButton>
-        </form>
+                {inputULData.map((input) => {
+                    return <IsolatedInput key={input.label} {...input} />;
+                })}
+                {error ? (
+                    <FormErrorMessage>
+                        Пользователь уже существует
+                    </FormErrorMessage>
+                ) : (
+                    ""
+                )}
+                <IsolatedButton
+                    type="submit"
+                    className="text-sm font-medium text-white mt-[20px] hover:bg-transparent rounded w-full px-[12px] placeholder:text-[#A0AEC0]
+                lg:w-[253px] lg:h-[48px] lg:mx-auto lg:mt-0"
+                    size="sm"
+                    variant="outline"
+                >
+                    Зарегистрироваться
+                </IsolatedButton>
+            </form>
+        </FormControl>
     );
 };
 
