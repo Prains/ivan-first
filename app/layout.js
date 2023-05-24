@@ -1,6 +1,5 @@
 import Providers from "@/components/Providers";
 import "./globals.css";
-import Footer from "@/components/Footer/Footer";
 
 export const metadata = {
   title: "Create Next App",
@@ -10,11 +9,10 @@ export const metadata = {
 export default function RootLayout({ children, popups }) {
   return (
     <html lang="ru">
-      <body className="font-text bg-[#000000] text-white">
+      <body className="font-text text-white bg-[#000000]">
         <Providers>
           {children}
           {popups}
-          <Footer />
         </Providers>
       </body>
     </html>
