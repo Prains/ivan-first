@@ -12,7 +12,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        "bgAuth-mobile": "url('../images/Login/bgAuth.png')",
+        "bgAuth-mobile": "url('../images/Login/bgAuth.svg')",
         "bgAuth-desktop": "url('../images/Login/bgAuthDesktop.png')",
       },
     },
