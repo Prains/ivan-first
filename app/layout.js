@@ -13,10 +13,10 @@ export default function RootLayout({ children, popups }) {
     <html lang="ru">
       <body className="font-text text-white bg-[#000000]">
         <Providers>
-          <Header />
+          {/*<Header />*/}
           {children}
           {popups}
-          <Footer />
+          {/*<Footer />*/}
         </Providers>
       </body>
     </html>
