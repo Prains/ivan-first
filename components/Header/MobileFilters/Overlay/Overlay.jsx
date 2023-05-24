@@ -6,7 +6,7 @@ import Link from "next/link";
 import IsolatedSearch from "@/components/ui/IsolatedSearch/IsolatedSearch";
 import IsolatedInput from "@/components/ui/IsolatedInput/IsolatedInput";
 
-const Overlay = ({active, setActive}) => {
+const Overlay = ({setActive}) => {
     // активный элемент
     const chooseItem = (id) => {
         const newArr = state.map((item) =>
@@ -58,7 +58,7 @@ const Overlay = ({active, setActive}) => {
             </ul>
             <h3 className='text-white font-medium text-[16px] mt-[24px] mb-[12px]'>Где искать</h3>
             <IsolatedSearch className='pr-[40px] md:bottom-0 bottom-1' placeholder={'Метро, район, кварталы, жилые массивы'}/>
-            <h3 className='mb-[20px] md:text-[24px] text-[16px]'>Цена</h3>
+            <h3 className='mt-[16px] mb-[12px] md:text-[24px] text-[16px]'>Цена</h3>
             <div className='flex gap-6'>
                 <IsolatedInput placeholder='От'></IsolatedInput>
                 <IsolatedInput placeholder='До'></IsolatedInput>
