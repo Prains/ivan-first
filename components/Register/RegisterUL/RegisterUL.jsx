@@ -131,9 +131,15 @@ const RegisterUL = ({ userRole }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        auth.register(username, email, userRole, type, password).then((res) => {
-            authHandling(setError, res);
-        });
+        if (password === confirmPassword) {
+            auth.register(username, email, userRole, type, password).then(
+                (res) => {
+                    authHandling(setError, res);
+                }
+            );
+        } else {
+            setError(true);
+        }
     };
 
     return (
@@ -146,7 +152,9 @@ const RegisterUL = ({ userRole }) => {
                 {inputULData.map((input) => {
                     return <IsolatedInput key={input.label} {...input} />;
                 })}
-                {error ? (
+                {password !== confirmPassword ? (
+                    <FormErrorMessage>Пароли не совпадают</FormErrorMessage>
+                ) : error ? (
                     <FormErrorMessage>
                         Пользователь уже существует
                     </FormErrorMessage>
