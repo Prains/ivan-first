@@ -5,4 +5,4 @@ import whiteArrowLeft from "./FiArrowLeft.svg";
 import IconMenu  from "./IconMenu.svg";
 import SettingsIcon from './SettingsIcon.svg'
 
-export { userIcon, logo, vk, tg, whiteArrowLeft, IconMenu, SettingsIcon };
+export { userIcon, vk, tg, whiteArrowLeft, IconMenu, SettingsIcon };
