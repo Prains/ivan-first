@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { userRed } from "@/images/icons/userRed/userRed";
 
 const AccountDetails = ({ name, role }) => {
   return (
