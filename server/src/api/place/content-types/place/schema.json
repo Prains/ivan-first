@@ -24,7 +24,8 @@
     "ownerId": {
       "type": "integer",
       "isRequired": true,
-      "unique": true
+      "unique": false,
+      "required": true
     },
     "reviews": {
       "type": "component",
@@ -52,7 +53,7 @@
     "photos": {
       "type": "media",
       "multiple": true,
-      "isRequired": false,
+      "required": false,
       "allowedTypes": [
         "images"
       ]

@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { Avatar, Tag, ButtonGroup } from "@chakra-ui/react";
+import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 
 const LandLordControlPanelDesktop = () => {
     return (
@@ -42,6 +43,9 @@ const LandLordControlPanelDesktop = () => {
                 >
                     Архив площадок
                 </Link>
+                <IsolatedButton className="w-full m-0" size="lg" variant="outline">
+                    Настройки профиля
+                </IsolatedButton>
             </ButtonGroup>
         </div>
     );

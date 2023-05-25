@@ -82,7 +82,7 @@ const LoginForm = () => {
                 <Link
                     className="text-white underline text-sm font-medium flex self-start last:mt-[-12px]
                 lg:last:mt-0"
-                    href="/"
+                    href="/forgot-password"
                 >
                     Забыли пароль?
                 </Link>
