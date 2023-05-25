@@ -6,7 +6,7 @@ import {
     AccordionPanel,
     AccordionIcon, Box,
 } from '@chakra-ui/react'
-import BookingItem from "@/components/BookingItem/BookingItem";
+import BookingItem from "@/components/Profile/Booking/BookingItem/BookingItem";
 
 const IsolatedAccordion = ({titleAccordeon, data, isPending, isActive}) => {
     return (

@@ -1,6 +1,4 @@
 import React, {useMemo} from 'react';
-import FooterAccount from "@/components/FooterAccount/FooterAccount";
-import HeaderAccount from "@/components/HeaderAccount/HeaderAccount";
 import IsolatedAccordion from "@/components/ui/IsolatedAccordion/IsolatedAccordion";
 import {cardImage} from "@/images/Main";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
@@ -45,7 +43,6 @@ const ViewBooking = () => {
 
     return (
         <section className='bg-[#0C1622] h-[100vh] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover relative px-[16px] py-[16px] w-full'>
-            <HeaderAccount isVisible='true' text='Просмотр брони'/>
             <div className='bg-[#EBF8FF] mt-[18px]'>
                 <IsolatedAccordion isActive={false} isPending={false} data={activeArr} titleAccordeon={'Заявки на бронь'}/>
                 <IsolatedAccordion isActive={true} isPending={true} data={successArr} titleAccordeon={'Подтвержденная бронь'}/>
@@ -54,7 +51,6 @@ const ViewBooking = () => {
             <div>
                 <IsolatedButton className='w-full mt-[20px] text-[#E74362] text-[14px] bg-transparent border-[#E74362] border-2 rounded-[6px]'>История брони</IsolatedButton>
             </div>
-            <FooterAccount className='w-[95%] absolute bottom-2 h-max flex flex-col justify-between'/>
         </section>
     );
 };
