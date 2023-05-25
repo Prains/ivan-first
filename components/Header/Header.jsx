@@ -22,7 +22,7 @@ const Header = () => {
             <Link href={links.login}>
               <IsolatedButton
                 className={
-                  "lg: font-[20px] h-[32px] w-[80px] md:hidden text-[#1A202C]"
+                  "lg:font-[20px] h-[32px] w-[80px] md:hidden text-[#1A202C]"
                 }
               >
                 Войти
