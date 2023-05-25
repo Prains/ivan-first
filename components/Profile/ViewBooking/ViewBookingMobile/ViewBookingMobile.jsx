@@ -1,8 +1,8 @@
-import React, {useMemo} from 'react';
+import  {useMemo} from 'react';
 import IsolatedAccordion from "@/components/ui/IsolatedAccordion/IsolatedAccordion";
 import {cardImage} from "@/images/Main";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
-import IsolatedAccordeonLandLord from "@/components/ui/IsolatedAccordeonLandLord/IsolatedAccordeonLandLord";
+import IsolatedAccordionLandLord from "@/components/ui/IsolatedAccordeonLandLord/IsolatedAccordeonLandLord";
 
 const ViewBookingMobile = () => {
     const landlord = true
@@ -12,28 +12,32 @@ const ViewBookingMobile = () => {
             title: 'ArtplayActive',
             date: '21 мая 18.00 - 22.00',
             image: cardImage,
-            type: 'active'
+            type: 'active',
+            landlord: true
         },
         {
             id: 2,
             title: 'ArtplaySuccessful',
             date: '22 мая 18.00 - 24.00',
             image: cardImage,
-            type: 'successful'
+            type: 'successful',
+            landlord: false
         },
         {
             id: 3,
             title: 'ArtplayPending',
             date: '23 мая 18.00 - 20.00',
             image: cardImage,
-            type: 'pending'
+            type: 'pending',
+            landlord: false
         },
         {
             id: 4,
             title: 'ArtplayPending',
             date: '23 мая 18.00 - 20.00',
             image: cardImage,
-            type: 'pending'
+            type: 'pending',
+            landlord: false
         }
     ]
     const activeArr = useMemo(
@@ -55,12 +59,15 @@ const ViewBookingMobile = () => {
             {landlord ?
                 <>
                     <div className='bg-[#EBF8FF] mt-[18px] rounded-[6px]'>
-                        <IsolatedAccordeonLandLord isAccept={true} isActive={false} isPending={false} data={activeArr}
-                                                   titleAccordeon={'Заявки на бронь'}/>
-                        <IsolatedAccordeonLandLord isAccept={false} isActive={true} isPending={true} data={successArr}
-                                                   titleAccordeon={'Подтвержденная бронь'}/>
-                        <IsolatedAccordeonLandLord isAccept={false} isActive={false} isPending={true} data={pendingArr}
-                                                   titleAccordeon={'Отклонённая бронь'}/>
+                        <h3 className='text-black pt-[11px] font-medium text-[20px] px-[16px]'>Artplay</h3>
+                            <IsolatedAccordionLandLord data={activeArr}
+                                               titleAccordeon={'Заявки на бронь'}/>
+                            <IsolatedAccordionLandLord data={successArr}
+                                               titleAccordeon={'Подтвержденная бронь'}/>
+                            <IsolatedAccordionLandLord  data={pendingArr}
+                                               titleAccordeon={'Отклонённая бронь'}/>
+
+
                     </div>
                     <div>
                         <IsolatedButton

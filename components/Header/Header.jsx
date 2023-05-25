@@ -7,9 +7,8 @@ import IsolatedSearch from "@/components/ui/IsolatedSearch/IsolatedSearch";
 import IsolatedPopOver from "@/components/ui/IsolatedPopOver/IsolatedPopOver";
 import HeaderModal from "@/components/Header/MobileFilters/HeaderModal/HeaderModal";
 const Header = () => {
-
     return (
-        <header className='hidden bg-[#0E1726] py-[15px] md:flex items-center z-30'>
+        <header className='bg-[#0E1726] py-[15px] md:flex items-center z-30'>
             <div className='w-[86%] lg:w-[86%] md:w-[86%] bg-[#0E1726] mx-auto flex justify-between items-center flex-col md:flex-row'>
                 <div className='md:w-max flex items-center justify-between mb-2'>
                     <Link href='#' className='w-full gap-12 flex items-center justify-between'>
@@ -18,8 +17,7 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className='flex gap-4 justify-between'>
-                    <IsolatedSearch variant={'outline'} colorScheme={'green'} placeholder={'Поиск'} className={'lg:w-[264px] md:w-[222px] w-[200px] text-[#D9D9D9] border-gray-200 h-[32px] md:h-[40px] pr-[40px]'} />
-                    <IsolatedInput variant={'outline'} colorScheme={'green'} placeholder={''} className={'lg:w-[184px] lg:block text-[#D9D9D9] border-gray-200 h-[32px] md:h-[40px] hidden'} />
+                    <IsolatedSearch variant={'outline'} colorScheme={'green'} placeholder={'Поиск'} className={'lg:w-[264px] md:w-[180px] w-[200px] text-[#D9D9D9] border-gray-200 h-[32px] md:h-[40px] pr-[40px]'} />
                     <IsolatedPopOver className='hidden md:block md:mr-0 mr-[0px] md:scale-125 z-40 cursor-pointer'/>
                     <HeaderModal className='block md:hidden'/>
                 </div>

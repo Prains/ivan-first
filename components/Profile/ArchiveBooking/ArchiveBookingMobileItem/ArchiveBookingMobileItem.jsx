@@ -5,7 +5,7 @@ import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 const ArchiveBookingMobileItem = ({title, image, date, isPending, isActive}) => {
     return (
         <Link href='/'>
-            <div className='w-full grid grid-cols-5 mt-[12px]'>
+            <div className='md:w-full grid grid-cols-5 mt-[12px]'>
                 <div className='col-span-1'>
                     <Image className='h-[32px] w-[32px] object-cover rounded-[2px]' src={image} alt='картинка'/>
                 </div>

@@ -4,7 +4,7 @@ import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import ActualBookingItem from "@/components/Profile/ActualBooking/ActualBookingItem/ActualBookingItem";
 import {userRed} from "@/images/icons/userRed/userRed";
 import BookingItem from "@/components/Profile/BookingItem/BookingItem";
-const ViewBooking = () => {
+const ActualBooking = () => {
     const data = [
         {
             id: 1,
@@ -30,7 +30,7 @@ const ViewBooking = () => {
             <div className='h-[90vh] bg-[#EBF8FF] rounded-[6px] px-[12px] py-[16px]'>
                 <div className='mt-[16px]'>
                     {
-                        data.map(item => <ActualBookingItem key={item.id} name={item.name} date={item.date} image={item.image}/>)
+                        data.map(item => <ActualBookingItem key={item.id} {...item}/>)
                     }
                 </div>
             </div>
@@ -41,4 +41,4 @@ const ViewBooking = () => {
     );
 };
 
-export default ViewBooking;
+export default ActualBooking;

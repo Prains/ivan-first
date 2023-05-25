@@ -10,7 +10,7 @@ const BookingReviews = () => {
             <div className='bg-[#EBF8FF] pt-[14px] px-[11px] pb-[24px] rounded-[6px] mt-[18px]'>
                 <div className='w-full grid grid-cols-5 '>
                     <div className='col-span-1'>
-                        <Image className='h-[32px] w-[32px] object-cover rounded-[2px]' src={cardImage} alt='картинка'/>
+                        <Image className='w-max h-[40px] object-cover rounded-[2px] pr-[10px]' src={cardImage} alt='картинка'/>
                     </div>
                     <div className='col-span-3'>
                         <p className='overflow-hidden text-ellipsis text-black text-[14px] max-h-[36px] font-medium'>Artplay</p>

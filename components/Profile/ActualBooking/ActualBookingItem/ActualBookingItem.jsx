@@ -9,7 +9,7 @@ const ActualBookingItem = ({name, image, date}) => {
         <Link href='/'>
             <div className='w-full grid grid-cols-5 mt-[8px]'>
                 <div className='col-span-1'>
-                    <Image className='h-[32px] w-[32px] object-cover rounded-[2px]' src={image} alt='картинка'/>
+                    <Image className='h-[40px] object-contain rounded-[2px]' src={image} alt='картинка'/>
                 </div>
                 <div className='col-span-3'>
                     <p className='text-ellipsis text-black text-[14px] max-h-[36px] font-medium'>{name}</p>
