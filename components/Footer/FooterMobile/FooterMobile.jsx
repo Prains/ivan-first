@@ -11,7 +11,7 @@ const FooterMobile = () => {
         <FooterLink href={"/"}>О нас</FooterLink>
         <Logo />
       </ul>
-      <ul className="flex-center-col items-start w-[135px]">
+      <ul className="flex-center-col w-[135px]">
         <FooterLink href={"/"}>Контакты</FooterLink>
         <div className="flex-center gap-4 mt-[37px]">
           <VkIcon />
