@@ -8,14 +8,16 @@ const ArchiveDesktop = () => {
     lg:flex"
 >
     <LandLordControlPanelDesktop />
-
-    <div
+    <div>
+        <h1 className="text-4xl font-medium self-start mb-5">Архив площадок</h1>
+        <div
         className="flex-center-col justify-between gap-[24px] max-h-[800px] mb-[35px] overflow-y-scroll"
     >
-        <h1 className="text-4xl font-medium self-start">Ваши площадки</h1>
         <ArchiveDesktopPlace isModerated={true} />
         <ArchiveDesktopPlace isModerated={false} />
     </div>
+    </div>
+
 </section>
    );
 }
