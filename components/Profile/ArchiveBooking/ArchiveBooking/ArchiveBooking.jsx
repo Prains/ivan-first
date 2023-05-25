@@ -1,10 +1,10 @@
 import React from 'react';
-import HeaderAccount from "@/components/HeaderAccount/HeaderAccount";
+import HeaderAccount from "@/components/Profile/HeaderAccount/HeaderAccount";
 import IsolatedAccordion from "@/components/ui/IsolatedAccordion/IsolatedAccordion";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
-import FooterAccount from "@/components/FooterAccount/FooterAccount";
+import FooterAccount from "@/components/Profile/FooterAccount/FooterAccount";
 import {cardImage} from "@/images/Main";
-import ArchiveBookingItem from "@/components/ArchiveBookingItem/ArchiveBookingItem";
+import ArchiveBookingItem from "@/components/Profile/ArchiveBooking/ArchiveBookingItem/ArchiveBookingItem";
 
 const ArchiveBooking = () => {
     const data = [
@@ -39,13 +39,11 @@ const ArchiveBooking = () => {
     ]
     return (
         <section className='bg-[#0C1622] h-[100vh] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover relative px-[16px] py-[16px] w-full'>
-            <HeaderAccount isVisible='true' text='История брони'/>
                 <div className='py-[14px] px-[12px] bg-[#EBF8FF] mt-[18px] rounded-[6px] pb-[60px]'>
                     {
                         data.map(item =>   <ArchiveBookingItem key={item.id} title={item.title} image={item.image} date={item.date}/>)
                     }
                 </div>
-            <FooterAccount className='w-[95%] absolute bottom-2 h-max flex flex-col justify-between'/>
         </section>
     );
 };

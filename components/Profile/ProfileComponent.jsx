@@ -3,9 +3,9 @@ import Image from "next/image";
 import {SettingsIcon, whiteArrowLeft} from "@/images/icons";
 import {userRed} from "@/images/icons/userRed/userRed";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
-import FooterAccount from "@/components/FooterAccount/FooterAccount";
-import HeaderAccount from "@/components/HeaderAccount/HeaderAccount";
-const AccountTentant = () => {
+import FooterAccount from "@/components/Profile/FooterAccount/FooterAccount";
+import HeaderAccount from "@/components/Profile/HeaderAccount/HeaderAccount";
+const ProfileComponent = () => {
     return (
         <section className='bg-[#0C1622] h-[100vh] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover relative px-[16px] py-[16px]  w-full'>
             <div className='flex justify-center mt-[32px]'>
@@ -24,4 +24,4 @@ const AccountTentant = () => {
     );
 };
 
-export default AccountTentant;
+export default ProfileComponent;

@@ -1,5 +1,5 @@
-import HeaderAccount from "@/components/HeaderAccount/HeaderAccount";
-import FooterAccount from "@/components/FooterAccount/FooterAccount";
+import HeaderAccount from "@/components/Profile/HeaderAccount/HeaderAccount";
+import FooterAccount from "@/components/Profile/FooterAccount/FooterAccount";
 
 const Layout = ({ children }) => {
   return <>
