@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 
-const ArchiveBookingItem = ({title, image, date, isPending, isActive}) => {
+const ArchiveBookingDesktopItem = ({title, image, date, isPending, isActive}) => {
     return (
         <Link href='/'>
             <div className='w-full grid grid-cols-5 mt-[12px]'>
@@ -33,4 +33,4 @@ const ArchiveBookingItem = ({title, image, date, isPending, isActive}) => {
     );
 };
 
-export default ArchiveBookingItem;
+export default ArchiveBookingDesktopItem;

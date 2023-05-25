@@ -9,8 +9,8 @@ import HeaderModal from "@/components/Header/MobileFilters/HeaderModal/HeaderMod
 const Header = () => {
 
     return (
-        <header className='bg-[#0E1726] py-[15px] flex items-center z-30'>
-            <div className='w-[91%] lg:w-[91%] md:w-[91%] bg-[#0E1726] mx-auto flex justify-between items-center flex-col md:flex-row'>
+        <header className='hidden bg-[#0E1726] py-[15px] md:flex items-center z-30'>
+            <div className='w-[86%] lg:w-[86%] md:w-[86%] bg-[#0E1726] mx-auto flex justify-between items-center flex-col md:flex-row'>
                 <div className='md:w-max flex items-center justify-between mb-2'>
                     <Link href='#' className='w-full gap-12 flex items-center justify-between'>
                         <Image src={HeaderLogo} alt='header__logo'/>

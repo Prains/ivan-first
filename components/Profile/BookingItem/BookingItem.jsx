@@ -5,11 +5,11 @@ import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 const BookingItem = ({title, image, date, isPending, isActive}) => {
     return (
         <Link href='/'>
-            <div className='w-full grid grid-cols-5 mt-[8px]'>
+            <div className='w-full grid grid-cols-7 mt-[8px]'>
                 <div className='col-span-1'>
                     <Image className='h-[32px] w-[32px] object-cover rounded-[2px]' src={image} alt='картинка'/>
                 </div>
-                <div className='col-span-3'>
+                <div className='col-span-5'>
                     <p className='overflow-hidden text-ellipsis text-black text-[14px] max-h-[36px] font-medium'>{title}</p>
                     {
                         isPending ?  <p className='text-[#E74362] text-[14px] font-medium'><span>{date}</span></p> :
