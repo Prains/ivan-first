@@ -19,7 +19,7 @@ const ArchiveDesktopPlace = () => {
                         className="h-full opacity-60"
                     />
                 </div>
-                <p className="text-sm font-normal text-white">
+                <p className="text-sm font-normal text-white h-[62px] whitespace-normal truncate">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation

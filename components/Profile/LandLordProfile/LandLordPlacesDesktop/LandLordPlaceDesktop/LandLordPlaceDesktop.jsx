@@ -21,7 +21,7 @@ const LandLordPlaceDesktop = ({ isModerated }) => {
                         className="h-full"
                     />
                 </div>
-                <p className="text-sm font-normal text-white">
+                <p className="text-sm font-normal mt-[8px] text-white h-[62px] whitespace-normal truncate">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -44,7 +44,7 @@ const LandLordPlaceDesktop = ({ isModerated }) => {
                             className={
                                 isModerated
                                     ? "w-full m-0 bg-[#E74362] text-white text-base font-medium"
-                                    : "w-full m-0 bg-transparent text-[#464646] text-base font-medium"
+                                    : "w-full m-0 bg-transparent text-[#8E8E8E] text-base font-medium"
                             }
                         >
                             Просмотр брони
@@ -56,7 +56,7 @@ const LandLordPlaceDesktop = ({ isModerated }) => {
                             className={
                                 isModerated
                                     ? "w-full m-0 bg-[#E74362] text-white text-base font-medium"
-                                    : "w-full m-0 bg-transparent text-[#464646] text-base font-medium"
+                                    : "w-full m-0 bg-transparent text-[#8E8E8E] text-base font-medium"
                             }
                         >
                             Редактировать площадку
