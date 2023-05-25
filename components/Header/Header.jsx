@@ -1,6 +1,4 @@
-import { HeaderLogo } from "@/images/Header";
 import Link from "next/link";
-import Image from "next/image";
 import IsolatedInput from "@/components/ui/IsolatedInput/IsolatedInput";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import IsolatedSearch from "@/components/ui/IsolatedSearch/IsolatedSearch";
@@ -12,7 +10,7 @@ import { Logo } from "../ui/Icons";
 const Header = () => {
   return (
     <header className="bg-[#0E1726] py-[15px] flex items-center z-30">
-      <div className="w-[91%] lg:w-[91%] md:w-[91%] bg-[#0E1726] mx-auto flex justify-between items-center flex-col md:flex-row">
+      <div className="w-[91%] bg-[#0E1726] mx-auto flex justify-between items-center flex-col md:flex-row">
         <div className="md:w-max flex items-center justify-between mb-2">
           <div
             href={links.mainpage}
