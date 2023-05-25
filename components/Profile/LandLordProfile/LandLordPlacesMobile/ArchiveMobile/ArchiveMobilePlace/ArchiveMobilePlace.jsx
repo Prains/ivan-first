@@ -4,7 +4,7 @@ import { bgPlace } from "@/images/Place";
 import { Card, ButtonGroup, CardBody } from "@chakra-ui/react";
 import Image from "next/image";
 
-const ArchivePlace = ({ isModerated }) => {
+const ArchiveMobilePlace = () => {
     return (
         <Card className="w-[288px]">
             <CardBody className="flex-center-col p-0">
@@ -35,7 +35,7 @@ const ArchivePlace = ({ isModerated }) => {
                         size="sm"
                         className="w-full m-0 bg-[#E74362] text-white"
                     >
-                        {isModerated ? "Сделать активной" : "Отправить на модерацию"}
+                        Сделать активной
                     </IsolatedButton>
                     <IsolatedButton
                         size="sm"
@@ -50,4 +50,4 @@ const ArchivePlace = ({ isModerated }) => {
     );
 };
 
-export default ArchivePlace;
+export default ArchiveMobilePlace;

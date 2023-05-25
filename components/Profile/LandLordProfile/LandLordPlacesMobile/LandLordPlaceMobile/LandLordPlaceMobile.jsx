@@ -3,14 +3,14 @@ import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import { bgPlace } from "@/images/Place";
 import { Card, ButtonGroup, CardBody } from "@chakra-ui/react";
 import Image from "next/image";
-import LandLordPlacesOverlay from "./LandLordPlacesOverlay";
+import LandLordPlaceMobileOverlay from "./LandLordPlaceMobileOverlay";
 
-const LandLordPlaces = ({ isModerated }) => {
+const LandLordPlaceMobile = ({ isModerated }) => {
     return (
         <Card className="w-[288px]">
             <CardBody className="flex-center-col p-0">
-                <div className="h-[140px]">
-                    {!isModerated && <LandLordPlacesOverlay />}
+                <div className="h-[140px] relative">
+                    {!isModerated && <LandLordPlaceMobileOverlay />}
                     <Image
                         src={bgPlace}
                         alt="Фото площадки"
@@ -26,6 +26,7 @@ const LandLordPlaces = ({ isModerated }) => {
                 </article>
                 <ButtonGroup className="flex-col w-[92%] mx-auto my-3 gap-2">
                     <IsolatedButton
+                    isDisabled={!isModerated}
                         size="sm"
                         variant={isModerated ? "" : "outline"}
                         className={
@@ -37,6 +38,7 @@ const LandLordPlaces = ({ isModerated }) => {
                         Просмотр брони
                     </IsolatedButton>
                     <IsolatedButton
+                    isDisabled={!isModerated}
                         size="sm"
                         variant={isModerated ? "" : "outline"}
                         className={
@@ -48,6 +50,7 @@ const LandLordPlaces = ({ isModerated }) => {
                         Редактировать площадку
                     </IsolatedButton>
                     <IsolatedButton
+                        isDisabled={!isModerated}
                         size="sm"
                         variant="outline"
                         className="w-full m-0 border-[#E74362] text-black"
@@ -60,4 +63,4 @@ const LandLordPlaces = ({ isModerated }) => {
     );
 };
 
-export default LandLordPlaces;
+export default LandLordPlaceMobile;

@@ -1,14 +1,12 @@
-import ArchivePlace from "@/components/Profile/LandLordPlaces/Archive/ArchivePlace";
+import ArchiveDesktop from "@/components/Profile/LandLordProfile/LandLordPlacesDesktop/ArchiveDesktop/ArchiveDesktop";
+import ArchiveMobile from "@/components/Profile/LandLordProfile/LandLordPlacesMobile/ArchiveMobile/ArchiveMobile";
+
 
 const Archive = () => {
     return (
         <main>
-            <section className="bg-[#0C1622] flex-center-col mx-4 my-5 min-h-screen">
-                <div className="flex-center flex-wrap gap-[11px] mb-[35px]">
-                  <ArchivePlace isModerated={true} />
-                  <ArchivePlace isModerated={false} />
-                </div>
-            </section>
+            <ArchiveMobile />
+            <ArchiveDesktop />
         </main>
     );
 };
