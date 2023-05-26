@@ -1,36 +1,22 @@
 "use client";
 import { FormControl, FormErrorMessage } from "@chakra-ui/react";
-import Link from "next/link";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import IsolatedInput from "@/components/ui/IsolatedInput/IsolatedInput";
 import useInput from "@/hooks/useInput";
 import auth from "@/utils/auth";
 import useAuth from "@/hooks/useAuth";
 import { useState } from "react";
-import links from "@/utils/links";
+import { useSearchParams } from 'next/navigation';
 
-const LoginForm = () => {
+const ResetPasswordForm = () => {
     const [error, setError] = useState(false);
     const authHandling = useAuth();
+    const searchParams = useSearchParams();
+    const code = searchParams.get("code")
 
-    const [email, emailChange] = useInput("");
     const [password, passwordChange] = useInput("");
 
     const data = [
-        {
-            className:
-                "bg-white rounded w-full px-[12px] placeholder:text-[#A0AEC0] text-[#000] h-[32px] lg:h-[48px]",
-            placeholder: "Почта",
-            focusBorderColor: "#E74362",
-            label: "Почта:",
-            htmlType: "email",
-            isRequired: true,
-            minLength: "6",
-            onChange: (e) => {
-                emailChange(e);
-            },
-            value: email,
-        },
         {
             className:
                 "bg-white rounded w-full px-[12px] placeholder:text-[#A0AEC0] text-[#000] h-[32px] lg:h-[48px]",
@@ -49,47 +35,33 @@ const LoginForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        auth.login(email, password).then((res) => {
+        auth.resetPassword(code, password).then((res) => {
             authHandling(setError, res);
         });
-    };
+    }
 
     return (
         <FormControl isInvalid={error}>
             <form
-                name="loginForm"
+                name="ResetPasswordForm"
                 className="mt-[20px] flex-center-col gap-6
-            lg:mt-[46px] lg:mb-[24px]"
+            lg:mt-[46px] lg:gap-[46px]"
                 onSubmit={handleSubmit}
             >
                 {data.map((input) => {
                     return <IsolatedInput {...input} key={input.label} />;
                 })}
-                {error ? (
-                    <FormErrorMessage>
-                        Почта или пароль неверные
-                    </FormErrorMessage>
-                ) : (
-                    ""
-                )}
                 <IsolatedButton
                     type="submit"
-                    className="text-sm font-medium text-white hover:bg-transparent rounded w-full px-[12px] h-[32px] placeholder:text-[#A0AEC0]
-              lg:w-[224px] lg:h-[48px] lg:order-[999] lg:text-base"
+                    className="text-sm font-medium text-white hover:bg-transparent rounded w-full px-[12px] h-[32px]
+                    bg-[#E74362] border-[#E74362] lg:w-[224px] lg:h-[48px] lg:order-[999] lg:text-base"
                     variant="outline"
                 >
-                    Войти
+                    Готово
                 </IsolatedButton>
-                <Link
-                    className="text-white underline text-sm font-medium flex self-start last:mt-[-12px]
-                lg:last:mt-0"
-                    href={links.forgotPassword}
-                >
-                    Забыли пароль?
-                </Link>
             </form>
         </FormControl>
     );
 };
 
-export default LoginForm;
+export default ResetPasswordForm;

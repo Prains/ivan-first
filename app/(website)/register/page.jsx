@@ -1,5 +1,4 @@
 import RegisterParams from "@/components/Register/RegisterParams/RegisterParams";
-import RegisterUserClassification from "@/components/Register/RegisterUserClassification/RegisterUserClassification";
 import ArrowBack from "@/components/ui/ArrowBack/ArrowBack";
 import AuthHeader from "@/components/Auth/AuthHeader/AuthHeader";
 

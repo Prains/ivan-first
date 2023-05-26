@@ -10,6 +10,7 @@ const IsolatedButton = ({
   variant,
   size,
   children,
+  isDisabled,
 }) => {
   return (
     <Button
@@ -20,6 +21,7 @@ const IsolatedButton = ({
       colorScheme={colorScheme}
       variant={variant}
       size={size}
+      isDisabled={isDisabled}
     >
       {children}
     </Button>
