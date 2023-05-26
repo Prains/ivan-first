@@ -14,21 +14,28 @@ const ForgotPasswordForm = () => {
     const [email, emailChange] = useInput("");
 
     const data = [
-      {
-          className:
-              "bg-white rounded w-full px-[12px] placeholder:text-[#A0AEC0] text-[#000] h-[32px] lg:h-[48px]",
-          placeholder: "Почта",
-          focusBorderColor: "#E74362",
-          label: "Почта:",
-          htmlType: "email",
-          isRequired: true,
-          minLength: "6",
-          onChange: (e) => {
-              emailChange(e);
-          },
-          value: email,
-      },
-    ]
+        {
+            className:
+                "bg-white rounded w-full px-[12px] placeholder:text-[#A0AEC0] text-[#000] h-[32px] lg:h-[48px]",
+            placeholder: "Почта",
+            focusBorderColor: "#E74362",
+            label: "Почта:",
+            htmlType: "email",
+            isRequired: true,
+            minLength: "6",
+            onChange: (e) => {
+                emailChange(e);
+            },
+            value: email,
+        },
+    ];
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        auth.forgotPassword(email).then((res) => {
+            authHandling(setError, res);
+        });
+    };
 
     return (
         <FormControl isInvalid={error}>
@@ -36,15 +43,13 @@ const ForgotPasswordForm = () => {
                 name="ForgotPasswordForm"
                 className="mt-[20px] flex-center-col gap-6
             lg:mt-[46px] lg:gap-[46px]"
-                // onSubmit={handleSubmit}
+                onSubmit={handleSubmit}
             >
-              {data.map((input) => {
-                return <IsolatedInput {...input} key={input.label} />;
-              })}
-              {error ? (
-                    <FormErrorMessage>
-                        Почта не найдена
-                    </FormErrorMessage>
+                {data.map((input) => {
+                    return <IsolatedInput {...input} key={input.label} />;
+                })}
+                {error ? (
+                    <FormErrorMessage>Почта не найдена</FormErrorMessage>
                 ) : (
                     ""
                 )}

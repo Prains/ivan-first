@@ -41,6 +41,26 @@ class Auth {
       },
     }).then((res) => res.json());
   }
+  forgotPassword(email) {
+    return fetch(`${links.backend}/auth/forgot-password`, {
+      method: "post",
+      headers: this._headers,
+      body: JSON.stringify({
+        email: email,
+      }),
+    }).then((res) => res.json());
+  }
+  resetPassword(code, password) {
+    return fetch(`${links.backend}/auth/reset-password`, {
+      method: "post",
+      headers: this._headers,
+      body: JSON.stringify({
+        code: code,
+        password: password,
+        passwordConfirmation: password,
+      }),
+    }).then((res) => res.json());
+  }
 }
 
 const auth = new Auth();

@@ -6,10 +6,13 @@ import useInput from "@/hooks/useInput";
 import auth from "@/utils/auth";
 import useAuth from "@/hooks/useAuth";
 import { useState } from "react";
+import { useSearchParams } from 'next/navigation';
 
 const ResetPasswordForm = () => {
     const [error, setError] = useState(false);
     const authHandling = useAuth();
+    const searchParams = useSearchParams();
+    const code = searchParams.get("code")
 
     const [password, passwordChange] = useInput("");
 
@@ -30,13 +33,20 @@ const ResetPasswordForm = () => {
         },
     ];
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        auth.resetPassword(code, password).then((res) => {
+            authHandling(setError, res);
+        });
+    }
+
     return (
         <FormControl isInvalid={error}>
             <form
                 name="ResetPasswordForm"
                 className="mt-[20px] flex-center-col gap-6
             lg:mt-[46px] lg:gap-[46px]"
-                // onSubmit={handleSubmit}
+                onSubmit={handleSubmit}
             >
                 {data.map((input) => {
                     return <IsolatedInput {...input} key={input.label} />;
