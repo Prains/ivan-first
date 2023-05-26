@@ -7,6 +7,7 @@ import useInput from "@/hooks/useInput";
 import auth from "@/utils/auth";
 import useAuth from "@/hooks/useAuth";
 import { useState } from "react";
+import links from "@/utils/links";
 
 const LoginForm = () => {
     const [error, setError] = useState(false);
@@ -82,7 +83,7 @@ const LoginForm = () => {
                 <Link
                     className="text-white underline text-sm font-medium flex self-start last:mt-[-12px]
                 lg:last:mt-0"
-                    href="/forgot-password"
+                    href={links.forgotPassword}
                 >
                     Забыли пароль?
                 </Link>

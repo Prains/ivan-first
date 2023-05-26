@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { Avatar, Tag, ButtonGroup } from "@chakra-ui/react";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
+import links from "@/utils/links";
 
 const LandLordControlPanelDesktop = () => {
     return (
@@ -24,7 +25,7 @@ const LandLordControlPanelDesktop = () => {
                 </Link>
                 <Link
                     className="font-medium text-base m-0 flex-center w-[307px] h-[48px] text-[#E74362] border-[#E74362] border-solid border-[1px] rounded-md"
-                    href="/profile/landlord-places"
+                    href={links.yourPlaces}
                 >
                     Ваши площадки
                 </Link>
@@ -39,7 +40,7 @@ const LandLordControlPanelDesktop = () => {
 
                 <Link
                     className="font-medium text-base m-0 flex-center w-[307px] h-[48px] text-[#E74362] border-[#E74362] border-solid border-[1px] rounded-md"
-                    href="/profile/landlord-places/archive"
+                    href={links.placesArchive}
                 >
                     Архив площадок
                 </Link>

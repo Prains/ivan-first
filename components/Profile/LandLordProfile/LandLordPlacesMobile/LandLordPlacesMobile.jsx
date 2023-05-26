@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LandLordPlaceMobile from "./LandLordPlaceMobile/LandLordPlaceMobile";
+import links from "@/utils/links";
 
 const LandLordPlacesMobile = () => {
   return ( 
@@ -14,7 +15,7 @@ const LandLordPlacesMobile = () => {
                 <div className="lg:order-first">
                     <Link
                         className="flex-center w-[288px] h-[32px] text-[#E74362] border-[#E74362] border-solid border-[1px] rounded-md"
-                        href="/profile/landlord-places/archive"
+                        href={links.placesArchive}
                     >
                         Архив площадок
                     </Link>
