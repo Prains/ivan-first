@@ -1,10 +1,10 @@
-
-import {cardImage} from "@/images/Main";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import ActualBookingItem from "@/components/Profile/ActualBooking/ActualBookingItem/ActualBookingItem";
 import {userRed} from "@/images/icons/userRed/userRed";
-import BookingItem from "@/components/Profile/BookingItem/BookingItem";
+
 const ActualBooking = () => {
+    // заявки на бронь
+
     const data = [
         {
             id: 1,

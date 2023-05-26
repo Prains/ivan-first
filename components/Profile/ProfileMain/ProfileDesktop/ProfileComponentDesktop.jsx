@@ -2,15 +2,15 @@ import Image from "next/image";
 import {userRed} from "@/images/icons/userRed/userRed";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import {SettingsIcon} from "@/images/icons";
-import ContainerActiveItem from "@/components/Profile/ContainerActiveItem/ContainerActiveItem";
+import ProfileContainerActiveItem from "@/components/Profile/ProfileMain/ProfileContainerActiveItem/ProfileContainerActiveItem";
+import ProfileAccordeon from "@/components/Profile/ProfileMain/ProfileAccordeon/ProfileAccordeon";
 
-const ProfileComponentDesktop = () => {
+const ProfileComponentDesktop = ({landlord}) => {
     const data = [{
         id: 1,
         title: 'Artplay',
 
     }]
-    const landlord = false
     return (
         <section className='hidden lg:block lg:w-[86%] md:w-[86%] mx-auto mb-0 mt-[45px] pb-[200px]'>
             <div className='grid-cols-3 grid gap-[16px]'>
@@ -53,8 +53,8 @@ const ProfileComponentDesktop = () => {
                 </div>
                 <div className='col-span-2 flex flex-col justify-start max-h-[800px] overflow-y-auto'>
                     <h3 className='text-white text-[36px] font-medium'>Текущие заявки</h3>
-                    <ContainerActiveItem/>
-                    <ContainerActiveItem/>
+                    <ProfileAccordeon landlord={landlord}/>
+                    <ProfileAccordeon landlord={landlord}/>
                 </div>
             </div>
         </section>

@@ -1,10 +1,9 @@
 import Image from "next/image";
 import {cardImage} from "@/images/Main";
-import StarRating from "@/components/ui/StarRating/StarRating";
-import IsolatedTextArea from "@/components/ui/IsolatedTextArea/IsolatedTextArea";
-import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
+import BookingReviewsForm from "@/components/Profile/BookingReviews/BookingReviewsForm/BookingReviewsForm";
 
 const BookingReviews = () => {
+    // отзыв на площадку
     return (
         <section className='bg-[#0C1622] h-[100vh] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover relative px-[16px] py-[16px] w-full'>
             <div className='bg-[#EBF8FF] pt-[14px] px-[11px] pb-[24px] rounded-[6px] mt-[18px]'>
@@ -19,16 +18,7 @@ const BookingReviews = () => {
                     </div>
                     <div className='col-span-1'></div>
                 </div>
-                <div className='mt-[16px] mb-[18px]'>
-                    <StarRating />
-                </div>
-                <div>
-                    <IsolatedTextArea placeholder='Huielooee' className='mt-[18px] bg-white border-0 text-black mb-[24px]'/>
-                </div>
-                <div className='flex items-center justify-between gap-[8px] w-[100%]'>
-                    <IsolatedButton className='bg-[#E74362] flex-1'>Готово</IsolatedButton>
-                    <IsolatedButton className='bg-transparent flex-1 border-[#8E8E8E] border-2 text-[#8E8E8E]'>Отмена</IsolatedButton>
-                </div>
+                <BookingReviewsForm />
             </div>
         </section>
     );

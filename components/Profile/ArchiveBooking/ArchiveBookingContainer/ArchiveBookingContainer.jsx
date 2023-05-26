@@ -1,13 +1,15 @@
 import React from 'react';
-import ActiveItem from "@/components/Profile/ActiveItem/ActiveItem";
+import ArchiveBookingContainerItem
+    from "@/components/Profile/ArchiveBooking/ArchiveBookingContainer/ArchiveBookingContainerItem/ArchiveBookingContainerItem";
 
-const ArchiveBookingContainer = () => {
+const ArchiveBookingContainer = ({landlord, data}) => {
     return (
         <div className='flex flex-col justify-start'>
             <h3 className='mt-[20px] font-medium text-[24px]'>Artplay</h3>
-            <ActiveItem />
-            <ActiveItem />
-            <ActiveItem />
+
+            {
+                data.map((item) =>  <ArchiveBookingContainerItem key={item.id} {...item} landlord={landlord}/>)
+            }
 
         </div>
     );

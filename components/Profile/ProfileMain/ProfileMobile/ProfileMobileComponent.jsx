@@ -6,7 +6,7 @@ import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 const landlord = true
 const activeBooks = true
 
-const ProfileMobileComponent = () => {
+const ProfileMobileComponent = ({landlord}) => {
     return (
         <section className='lg:hidden bg-[#0C1622] h-[100vh] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover relative px-[16px] py-[16px]  w-full'>
             <div className='flex justify-center mt-[32px]'>

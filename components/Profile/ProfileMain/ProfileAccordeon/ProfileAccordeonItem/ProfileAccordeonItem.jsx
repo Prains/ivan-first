@@ -5,8 +5,9 @@ import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import {AcceptButtonDesktop} from "@/images/icons/AcceptButtonDesktop";
 import {RedCloseIcon} from "@/images/icons/RedCloseIcon";
 
-const ActiveItem = () => {
-    const landlord = false
+const ProfileAccordeonItem = ({landlord}) => {
+
+
     return (
         <div>
             <div
@@ -27,20 +28,20 @@ const ActiveItem = () => {
                 <div>
                     {
                         landlord ? <>
-                               <div>
-                                   <div className='md:block lg:flex gap-2'>
-                                       <IsolatedButton
-                                           className='w-[100%] p-[8px] lg:w-[116px] text-white bg-transparent border-white border-2 rounded-[6px]'><Image
-                                           src={AcceptButtonDesktop} alt='кнопка'/>Принять</IsolatedButton>
-                                       <IsolatedButton
-                                           className='w-[100%] p-[8px] lg:w-[116px] text-[#E74362] bg-transparent border-[#E74362] border-2 rounded-[6px]'><Image
-                                           src={RedCloseIcon} alt='кнопка'/>Отклонить</IsolatedButton>
-                                   </div>
-                                   <div>
-                                       <IsolatedButton
-                                           className='w-[100%] lg:w-[100%] text-[#E74362] bg-transparent border-[#E74362] border-2 mt-[8px] rounded-[6px]'>Детали</IsolatedButton>
-                                   </div>
-                               </div>
+                                <div>
+                                    <div className='md:block lg:flex gap-2'>
+                                        <IsolatedButton
+                                            className='w-[100%] p-[8px] lg:w-[116px] text-white bg-transparent border-white border-2 rounded-[6px]'><Image
+                                            src={AcceptButtonDesktop} alt='кнопка'/>Принять</IsolatedButton>
+                                        <IsolatedButton
+                                            className='w-[100%] p-[8px] lg:w-[116px] text-[#E74362] bg-transparent border-[#E74362] border-2 rounded-[6px]'><Image
+                                            src={RedCloseIcon} alt='кнопка'/>Отклонить</IsolatedButton>
+                                    </div>
+                                    <div>
+                                        <IsolatedButton
+                                            className='w-[100%] lg:w-[100%] text-[#E74362] bg-transparent border-[#E74362] border-2 mt-[8px] rounded-[6px]'>Детали</IsolatedButton>
+                                    </div>
+                                </div>
                             </> :
                             <>
                                 <IsolatedButton
@@ -53,4 +54,4 @@ const ActiveItem = () => {
     );
 };
 
-export default ActiveItem;
+export default ProfileAccordeonItem;

@@ -38,22 +38,19 @@ const BookingItem = ({title, image, date, landlord, titleAccordeon}) => {
                 </div>
                 <div className='col-span-1 flex justify-end'>
                     {
-                        isAccept ? <>
-                                <div className='col-span-1 flex gap-[3px] items-center'>
-                                    <Image className='h-[24px] w-[28px]' src={AcceptButton} alt='кнопка соглашения'/>
-                                    <Image className='h-[24px] w-[28px]' src={CloseButton} alt='кнопка отмены'/>
-                                </div>
-                            </> :
-                            <>
-                                {
-                                    isAgree ? <IsolatedButton
-                                            className='w-[59px] h-[24px] text-[14px] text-white bg-[#E74362] bg-opacity-75 px-[6px] py-[2px]'>детали</IsolatedButton> :
-                                        <IsolatedButton
-                                            className='w-[59px] h-[24px] text-[14px] text-white bg-[#0E1726] bg-opacity-75 px-[6px] py-[2px]'>детали</IsolatedButton>
-                                }
+                        isAccept ?  landlord ?
+                            <div className='col-span-1 flex gap-[3px] items-center'>
+                                <Image className='h-[24px] w-[28px]' src={AcceptButton} alt='кнопка соглашения'/>
+                                <Image className='h-[24px] w-[28px]' src={CloseButton} alt='кнопка отмены'/>
+                            </div> :
+                            <IsolatedButton
+                                className='w-[59px] h-[24px] text-[14px] text-white bg-[#0E1726] bg-opacity-75 px-[6px] py-[2px]'>детали</IsolatedButton>
 
-                            </>
+                        : <IsolatedButton
+                                className='w-[59px] h-[24px] text-[14px] text-white bg-[#0E1726] bg-opacity-75 px-[6px] py-[2px]'>детали</IsolatedButton>
+
                     }
+
 
 
                 </div>

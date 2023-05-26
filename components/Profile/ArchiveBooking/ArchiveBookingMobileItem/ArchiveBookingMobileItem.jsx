@@ -6,8 +6,8 @@ const ArchiveBookingMobileItem = ({title, image, date, isPending, isActive}) => 
     return (
         <Link href='/'>
             <div className='md:w-full grid grid-cols-5 mt-[12px]'>
-                <div className='col-span-1'>
-                    <Image className='h-[32px] w-[32px] object-cover rounded-[2px]' src={image} alt='картинка'/>
+                <div className='col-span-1 mr-[12px]'>
+                    <Image className='h-[40px] object-contain rounded-[2px]' src={image} alt='картинка'/>
                 </div>
                 <div className='col-span-3'>
                     <p className='overflow-hidden text-ellipsis text-black text-[14px] max-h-[36px] font-medium'>{title}</p>
@@ -16,7 +16,7 @@ const ArchiveBookingMobileItem = ({title, image, date, isPending, isActive}) => 
                             <p className='text-[#0E1726] text-opacity-75 text-[14px] font-medium'><span>{date}</span></p>
                     }
                 </div>
-                <div className='col-span-1'>
+                <div className='col-span-1 flex justify-end'>
                     {
                         isActive ? <IsolatedButton
                                 className='w-[59px] h-[24px] text-[14px] text-white bg-[#E74362] bg-opacity-75 px-[6px] py-[2px]'>детали</IsolatedButton>

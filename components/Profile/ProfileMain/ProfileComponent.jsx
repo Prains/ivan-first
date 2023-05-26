@@ -2,10 +2,11 @@ import ProfileMobileComponent from "@/components/Profile/ProfileMain/ProfileMobi
 import ProfileComponentDesktop from "@/components/Profile/ProfileMain/ProfileDesktop/ProfileComponentDesktop";
 
 const ProfileComponent = () => {
+    const landlord = false
     return (
         <section>
-            <ProfileMobileComponent />
-            <ProfileComponentDesktop />
+            <ProfileMobileComponent landlord={landlord} />
+            <ProfileComponentDesktop landlord={landlord}/>
         </section>
     );
 };

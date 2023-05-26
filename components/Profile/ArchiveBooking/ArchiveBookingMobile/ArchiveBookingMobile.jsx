@@ -1,10 +1,7 @@
 import {cardImage} from "@/images/Main";
 import ArchiveBookingMobileItem from "@/components/Profile/ArchiveBooking/ArchiveBookingMobileItem/ArchiveBookingMobileItem";
 import IsolatedAccordeonLandLord from "@/components/ui/IsolatedAccordeonLandLord/IsolatedAccordeonLandLord";
-import React from "react";
-
-const ArchiveBookingMobile = () => {
-    const landlord = true
+const ArchiveBookingMobile = ({landlord}) => {
     const data = [
         {
             id: 1,
@@ -48,7 +45,7 @@ const ArchiveBookingMobile = () => {
                     <>
                         <div className='py-[14px] px-[12px] bg-[#EBF8FF] mt-[18px] rounded-[6px] pb-[60px]'>
                             {
-                                data.map(item =>   <ArchiveBookingMobileItem key={item.id} title={item.title} image={item.image} date={item.date}/>)
+                                data.map(item =>   <ArchiveBookingMobileItem key={item.id} {...item}/>)
                             }
                         </div>
                     </>

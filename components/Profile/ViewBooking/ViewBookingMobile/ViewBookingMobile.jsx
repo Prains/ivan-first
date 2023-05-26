@@ -3,9 +3,10 @@ import IsolatedAccordion from "@/components/ui/IsolatedAccordion/IsolatedAccordi
 import {cardImage} from "@/images/Main";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import IsolatedAccordionLandLord from "@/components/ui/IsolatedAccordeonLandLord/IsolatedAccordeonLandLord";
+import ViewBookingMobileAccordeon
+    from "@/components/Profile/ViewBooking/ViewBookingMobile/ViewBookingMobileAccordeon/ViewBookingMobileAccordeon";
 
-const ViewBookingMobile = () => {
-    const landlord = true
+const ViewBookingMobile = ({landlord}) => {
     const data = [
         {
             id: 1,
@@ -60,11 +61,11 @@ const ViewBookingMobile = () => {
                 <>
                     <div className='bg-[#EBF8FF] mt-[18px] rounded-[6px]'>
                         <h3 className='text-black pt-[11px] font-medium text-[20px] px-[16px]'>Artplay</h3>
-                            <IsolatedAccordionLandLord data={activeArr}
+                            <ViewBookingMobileAccordeon isLandlord={true} landlord={landlord}  data={activeArr}
                                                titleAccordeon={'Заявки на бронь'}/>
-                            <IsolatedAccordionLandLord data={successArr}
+                            <ViewBookingMobileAccordeon data={successArr}
                                                titleAccordeon={'Подтвержденная бронь'}/>
-                            <IsolatedAccordionLandLord  data={pendingArr}
+                            <ViewBookingMobileAccordeon  data={pendingArr}
                                                titleAccordeon={'Отклонённая бронь'}/>
 
 
@@ -78,12 +79,13 @@ const ViewBookingMobile = () => {
                 :
                 <>
                     <div className='bg-[#EBF8FF] mt-[18px]'>
-                        <IsolatedAccordion isActive={false} isPending={false} data={activeArr}
-                                           titleAccordeon={'Заявки на бронь'}/>
-                        <IsolatedAccordion isActive={true} isPending={true} data={successArr}
-                                           titleAccordeon={'Подтвержденная бронь'}/>
-                        <IsolatedAccordion isActive={false} isPending={true} data={pendingArr}
-                                           titleAccordeon={'Отклонённая бронь'}/>
+                        <ViewBookingMobileAccordeon landlord={landlord}  data={activeArr}
+                                                    titleAccordeon={'Заявки на бронь'}/>
+                        <ViewBookingMobileAccordeon data={successArr}
+                                                    titleAccordeon={'Подтвержденная бронь'}/>
+                        <ViewBookingMobileAccordeon  data={pendingArr}
+                                                     titleAccordeon={'Отклонённая бронь'}/>
+
                     </div>
                     <div>
                         <IsolatedButton

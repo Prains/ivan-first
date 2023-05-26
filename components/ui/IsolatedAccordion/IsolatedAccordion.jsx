@@ -6,9 +6,9 @@ import {
     AccordionPanel,
     AccordionIcon,
 } from '@chakra-ui/react'
-import BookingItem from "@/components/Profile/BookingItem/BookingItem";
+import BookingItem from "@/components/Profile/ui/BookingItem/BookingItem";
 
-const IsolatedAccordion = ({titleAccordeon, data}) => {
+const IsolatedAccordion = ({titleAccordeon, data, landlord}) => {
     return (
         <Accordion defaultIndex={[0]} allowMultiple className='bg-[#EBF8FF] rounded-[6px]'>
             <AccordionItem className='border-0'>
@@ -20,7 +20,7 @@ const IsolatedAccordion = ({titleAccordeon, data}) => {
                 </h2>
                 <AccordionPanel className='text-black' pb={4}>
                     {
-                        data.map(item => <BookingItem titleAccordeon={titleAccordeon} key={item.id} data={item}/>)
+                        data.map(item => <BookingItem landlord={landlord} titleAccordeon={titleAccordeon} key={item.id} {...item}/>)
                     }
                 </AccordionPanel>
             </AccordionItem>

@@ -2,20 +2,10 @@
 import { FaStar } from "react-icons/fa";
 import { useState } from "react";
 
-const StarRating = () => {
-    const [currentValue, setCurrentValue] = useState(0)
-    const [hoverValue, setHoverValue] = useState(undefined)
+const StarRating = ({handleClick, handleMouseOver, handleMouseLeave, currentValue, hoverValue}) => {
 
-    const handleClick = (value) => {
-        setCurrentValue(value)
-    }
-    const handleMouseOver = (value)=> {
-        setHoverValue(value)
-    }
 
-    const handleMouseLeave = (value)=> {
-        setHoverValue(undefined)
-    }
+
 
     const colors = {
         orange: "#F5FF7F",

@@ -2,17 +2,20 @@ import Image from "next/image";
 import {userRed} from "@/images/icons/userRed/userRed";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import {SettingsIcon} from "@/images/icons";
-import ContainerActiveItem from "@/components/Profile/ContainerActiveItem/ContainerActiveItem";
+import ProfileContainerActiveItem from "@/components/Profile/ProfileMain/ProfileContainerActiveItem/ProfileContainerActiveItem";
 import ArchiveBookingContainer
     from "@/components/Profile/ArchiveBooking/ArchiveBookingContainer/ArchiveBookingContainer";
+import {cardImage} from "@/images/Main";
 
-const ArchiveBookingDesktop = () => {
+const ArchiveBookingDesktop = ({landlord}) => {
     const data = [{
         id: 1,
         title: 'Artplay',
+        image: cardImage,
+        date: '22 мая 18.00 - 22.00'
 
     }]
-    const landlord = false
+
     return (
         <section className='hidden lg:block lg:w-[86%] md:w-[86%] mx-auto mb-0 mt-[45px] pb-[200px]'>
             <div className='grid-cols-3 grid gap-[16px]'>
@@ -55,8 +58,8 @@ const ArchiveBookingDesktop = () => {
                 </div>
                 <div className='col-span-2 flex flex-col justify-start max-h-[800px] overflow-y-auto'>
                     <h3 className='text-white text-[36px] font-medium'>Архив брони</h3>
-                    <ContainerActiveItem />
-                    <ContainerActiveItem />
+                    <ArchiveBookingContainer data={data} landlord={landlord}/>
+
 
                 </div>
             </div>
