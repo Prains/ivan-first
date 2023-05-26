@@ -6,6 +6,9 @@ const links = {
   forgotPassword: "/forgot-password",
   placesArchive: "/profile/places-archive",
   yourPlaces: "/profile/your-places",
+  viewBooks: "/profile/books/view",
+  booksRequests: "/profile/books/requests",
+  booksArchive: "/profile/books/archive",
 };
 
 export default links;
