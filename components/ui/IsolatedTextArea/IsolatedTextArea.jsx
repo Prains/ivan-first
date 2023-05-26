@@ -1,10 +1,8 @@
-"use client"
-import { Textarea } from '@chakra-ui/react'
+"use client";
+import { Textarea } from "@chakra-ui/react";
 
-const IsolatedTextArea = ({className, placeholder}) => {
-    return (
-        <Textarea placeholder={placeholder} className={className}/>
-    );
+const IsolatedTextArea = (props) => {
+  return <Textarea {...props} />;
 };
 
 export default IsolatedTextArea;
