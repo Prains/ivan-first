@@ -33,6 +33,10 @@ const ProfileNewPlace = () => {
   const [tag, tagChange] = useInput("");
   const [description, descriptionChange] = useInput("");
   const [workingDays, daysChange] = useState("");
+  const [workingTimeStart, changeWorkingTimeStarts] = useInput(0);
+  const [workingTimeEnd, changeWorkingTimeEnds] = useInput(0);
+
+  console.log(file);
 
   return (
     <main>
@@ -105,7 +109,7 @@ const ProfileNewPlace = () => {
               </IsolatedButton>
             </article>
             <article className="flex-center-col items-start">
-              <Select placeholder="С">
+              <Select placeholder="С" onChange={changeWorkingTimeStarts}>
                 {workingHours.map((hour) => {
                   return (
                     <option
@@ -118,7 +122,7 @@ const ProfileNewPlace = () => {
                   );
                 })}
               </Select>
-              <Select placeholder="По">
+              <Select placeholder="По" onChange={changeWorkingTimeEnds}>
                 {workingHours.map((hour) => {
                   return (
                     <option
@@ -133,7 +137,12 @@ const ProfileNewPlace = () => {
               </Select>
             </article>
           </div>
-          <input type="file" />
+          <input
+            type="file"
+            onChange={(e) => {
+              setFile(e.target.value);
+            }}
+          />
         </section>
       </form>
     </main>
