@@ -27,7 +27,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::place.place",
-      "inversedBy": "books"
+      "mappedBy": "books"
     }
   }
 }
