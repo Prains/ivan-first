@@ -1,6 +1,6 @@
 const links = {
   mainpage: "/",
-  backend: "http://localhost:1337/api",
+  backend: "http://89.232.167.133:1337/api",
   register: "/register",
   login: "/login",
   forgotPassword: "/forgot-password",
