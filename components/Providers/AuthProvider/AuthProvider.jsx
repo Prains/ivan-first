@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCurrentUser } from "@/services/actions";
 
-const AuthProvider = () => {
+const AuthProvider = ({ children }) => {
   const dispatch = useDispatch();
   const status = useSelector((state) => state.user.status);
 
