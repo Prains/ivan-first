@@ -8,7 +8,8 @@ import {
 } from '@chakra-ui/react'
 import BookingItem from "@/components/Profile/ui/BookingItem/BookingItem";
 
-const IsolatedAccordion = ({titleAccordeon, data, landlord}) => {
+const IsolatedAccordionLandLord = ({titleAccordeon, data, landlord}) => {
+
     return (
         <Accordion defaultIndex={[0]} allowMultiple className='bg-[#EBF8FF] rounded-[6px]'>
             <AccordionItem className='border-0'>
@@ -18,9 +19,10 @@ const IsolatedAccordion = ({titleAccordeon, data, landlord}) => {
                         <AccordionIcon />
                     </AccordionButton>
                 </h2>
+
                 <AccordionPanel className='text-black' pb={4}>
                     {
-                        data.map(item => <BookingItem landlord={landlord} titleAccordeon={titleAccordeon} key={item.id} {...item}/>)
+                        data.map(item => <BookingItem landlord={landlord} titleAccordeon={titleAccordeon}  key={item.id} {...item}/>)
                     }
                 </AccordionPanel>
             </AccordionItem>
@@ -28,4 +30,4 @@ const IsolatedAccordion = ({titleAccordeon, data, landlord}) => {
     );
 };
 
-export default IsolatedAccordion;
+export default IsolatedAccordionLandLord;

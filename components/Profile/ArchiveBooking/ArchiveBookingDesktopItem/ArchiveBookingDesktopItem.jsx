@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 
-const BookingItem = ({title, image, date, isPending, isActive}) => {
+const ArchiveBookingDesktopItem = ({title, image, date, isPending, isActive}) => {
     return (
         <Link href='/'>
-            <div className='w-full grid grid-cols-5 mt-[8px]'>
+            <div className='w-full grid grid-cols-5 mt-[12px]'>
                 <div className='col-span-1'>
                     <Image className='h-[32px] w-[32px] object-cover rounded-[2px]' src={image} alt='картинка'/>
                 </div>
@@ -19,15 +19,18 @@ const BookingItem = ({title, image, date, isPending, isActive}) => {
                 <div className='col-span-1'>
                     {
                         isActive ? <IsolatedButton
-                            className='w-[59px] h-[24px] text-[14px] text-white bg-[#E74362] bg-opacity-75 px-[6px] py-[2px]'>детали</IsolatedButton>
+                                className='w-[59px] h-[24px] text-[14px] text-white bg-[#E74362] bg-opacity-75 px-[6px] py-[2px]'>детали</IsolatedButton>
                             : <IsolatedButton
                                 className='w-[59px] h-[24px] text-[14px] text-white bg-[#0E1726] bg-opacity-75 px-[6px] py-[2px]'>детали</IsolatedButton>
                     }
                 </div>
+            </div>
+            <div className='w-[100%]'>
+                <IsolatedButton className='w-[100%] h-[24px] text-white bg-[#E74362] text-[14px]'>Оставить отзыв</IsolatedButton>
             </div>
         </Link>
 
     );
 };
 
-export default BookingItem;
+export default ArchiveBookingDesktopItem;
