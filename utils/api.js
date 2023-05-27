@@ -27,6 +27,14 @@ class Api {
             body: JSON.stringify(data),
         }).then((res) => res.json());
     }
+
+    addPlace(data) {
+        return fetch(`${links.backend}/places`, {
+            method: "post",
+            headers: this._headers,
+            body: JSON.stringify(data),
+          }).then((res) => res.json());
+    }
 }
 
 const api = new Api();
