@@ -12,7 +12,7 @@ class Api {
 
     getUserPlaces(id) {
         return fetch(
-            `${links.backend}/users/${id}?populate[places][populate]=*`,
+            `${links.backend}/users/${id}?populate[0]=places&populate[1]=places.books&populate[2]=places.books.book&populate[3]=places.books.owner`, 
             {
                 method: "get",
                 headers: this._headers,

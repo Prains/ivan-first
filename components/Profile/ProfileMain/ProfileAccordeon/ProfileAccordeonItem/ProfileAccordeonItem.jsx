@@ -6,13 +6,13 @@ import { AcceptButtonDesktop } from "@/images/icons/AcceptButtonDesktop";
 import { RedCloseIcon } from "@/images/icons/RedCloseIcon";
 import { bgPlace } from "@/images/Place";
 
-const ProfileAccordeonItem = ({ landlord }) => {
+const ProfileAccordeonItem = ({ user, owner, book }) => {
   return (
     <div>
       <div className="w-[100%] bg-[#17283F] rounded-[12px] mt-[16px] flex items-center justify-between px-[16px] py-[12px]">
         <div className="flex items-center gap-[12px]">
           <div>
-            {landlord ? (
+            {user === "landlord" ? (
               <Image src={userRed} alt="фото" />
             ) : (
               <Image
@@ -24,20 +24,20 @@ const ProfileAccordeonItem = ({ landlord }) => {
           </div>
           <div>
             <p className="text-[20px] text-white font-medium">
-              Мария Булагвоковофы
+              {owner.username}
             </p>
-            {landlord ? (
-              <p className="text-[20px] text-white font-medium">Artplay</p>
+            {owner.type === "organization" ? (
+              <p className="text-[20px] text-white font-medium">{owner.organizationName}</p>
             ) : (
               ""
             )}
             <p className="text-[20p] text-white font-medium">
-              21 февраль <span className="text-[#E74362]">18.00 - 22.00</span>
+              {book.startDate} <span className="text-[#E74362]">{book.time}</span>
             </p>
           </div>
         </div>
         <div>
-          {landlord ? (
+          {user === "landlord" ? (
             <>
               <div>
                 <div className="md:block lg:flex gap-2">

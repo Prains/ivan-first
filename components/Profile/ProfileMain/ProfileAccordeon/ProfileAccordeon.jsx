@@ -1,12 +1,17 @@
 import ProfileAccordeonItem from "@/components/Profile/ProfileMain/ProfileAccordeon/ProfileAccordeonItem/ProfileAccordeonItem";
 
-const ProfileAccordeon = ({ landlord }) => {
+const ProfileAccordeon = ({ title, books, user }) => {
   return (
     <div className="flex flex-col justify-start">
-      <h3 className="mt-[20px] font-medium text-[24px]">Artplay</h3>
-      <ProfileAccordeonItem landlord={landlord} />
-      <ProfileAccordeonItem landlord={landlord} />
-      <ProfileAccordeonItem landlord={landlord} />
+      <h3 className="mt-[20px] font-medium text-[24px]">{title}</h3>
+      {books.map((item) => {
+        return (
+          <ProfileAccordeonItem key={item.id} {...item} user={user} />
+        )
+      })}
+      {/* <ProfileAccordeonItem landlord={user} />
+      <ProfileAccordeonItem landlord={user} />
+      <ProfileAccordeonItem landlord={user} /> */}
     </div>
   );
 };
