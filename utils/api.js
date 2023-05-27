@@ -10,6 +10,16 @@ class Api {
         };
     }
 
+    getUserBooks(id) {
+        return fetch(
+            `${links.backend}/users/${id}?populate[0]=books&populate[1]=books.book&populate[2]=books.places&populate[3]=books.places.photos&populate[4]=books.owners`, 
+            {
+                method: "get",
+                headers: this._headers,
+            }
+        ).then((res) => res.json());
+    }
+
     getUserPlaces(id) {
         return fetch(
             `${links.backend}/users/${id}?populate[0]=places&populate[1]=places.books&populate[2]=places.photos&populate[3]=places.books.book&populate[4]=places.books.owner`, 

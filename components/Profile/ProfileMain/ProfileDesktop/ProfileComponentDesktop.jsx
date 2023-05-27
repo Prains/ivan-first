@@ -4,6 +4,7 @@ import { userRed } from "@/images/icons/userRed/userRed";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import { SettingsIcon } from "@/images/icons";
 import ProfileContainerActiveItem from "@/components/Profile/ProfileMain/ProfileContainerActiveItem/ProfileContainerActiveItem";
+import { IsolatedAcceptedAccordionDesktop, IsolatedPendingAccordionDesktop } from "@/components/ui/IsolatedAccordionDesktop/IsolatedAccordionDesktop";
 import ProfileAccordeon from "@/components/Profile/ProfileMain/ProfileAccordeon/ProfileAccordeon";
 import useFindUser from "@/hooks/useFindUser";
 import Link from "next/link";
@@ -11,8 +12,10 @@ import links from "@/utils/links";
 import { useEffect, useState } from "react";
 import api from "@/utils/api";
 
-const ProfileComponentDesktop = ({ landlord }) => {
+const ProfileComponentDesktop = () => {
     const user = useFindUser();
+
+    const data = [{ id: 0, title: 'Заявки'}, { id: 1, title: 'Подтвержденная бронь'}];
 
     if (!user) {
         return null;
@@ -20,11 +23,14 @@ const ProfileComponentDesktop = ({ landlord }) => {
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [places, setPlaces] = useState([]);
-
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [books, setBooks] = useState([]);
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
-        api.getUserPlaces(user.id).then((res) => setPlaces(res.places));
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        user.userRole === "landlord" ? 
+        api.getUserPlaces(user.id).then((res) => setPlaces(res.places)) :
+        api.getUserBooks(user.id).then((res) => setBooks(res.books))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -44,12 +50,21 @@ const ProfileComponentDesktop = ({ landlord }) => {
                             ? "Арендодатель"
                             : "Арендатор"}
                     </p>
-                    <IsolatedButton
-                        size="lg"
-                        className="font-medium text-base w-[307px] bg-[#E74362] mt-[22px]"
-                    >
-                        Добавить новую площадку
-                    </IsolatedButton>
+                    {user.userRole === "landlord" ? (
+                        <IsolatedButton
+                            size="lg"
+                            className="font-medium text-base w-[307px] bg-[#E74362] mt-[22px]"
+                        >
+                            Добавить новую площадку
+                        </IsolatedButton>
+                    ) : (
+                        <Link
+                            className="font-medium text-base m-0 flex-center w-[307px] mt-5 h-[48px] text-[#E74362] border-[#E74362] border-solid border-[1px] rounded-md"
+                            href={links.profile}
+                        >
+                            Текущая бронь
+                        </Link>
+                    )}
                     {user.userRole === "landlord" ? (
                         <Link
                             className="font-medium text-base m-0 flex-center w-[307px] mt-5 h-[48px] text-[#E74362] border-[#E74362] border-solid border-[1px] rounded-md"
@@ -66,21 +81,21 @@ const ProfileComponentDesktop = ({ landlord }) => {
                                 {/* <span className="absolute -right-2 -top-2 z-10 text-white text-[16px] py-[2px] px-[10px] font-medium bg-[#E74362] rounded-[50px]">
                                     1
                                 </span> */}
-                                <IsolatedButton
-                                    size="lg"
-                                    className="font-medium text-base w-[307px] bg-transparent border-[1px] border-white rounded-[6px] py-[14px]"
-                                >
-                                    Просмотр брони
-                                </IsolatedButton>
+                        <Link
+                            className="font-medium text-base m-0 flex-center w-[307px] h-[48px] text-[#E74362] border-[#E74362] border-solid border-[1px] rounded-md"
+                            href={links.yourPlaces}
+                        >
+                            Просмотр брони
+                        </Link>
                             </>
                         ) : (
                             <>
-                                <IsolatedButton
-                                    size="lg"
-                                    className="font-medium text-base w-[307px] bg-transparent border-[1px] border-white rounded-[6px] py-[14px]"
-                                >
-                                    История брони
-                                </IsolatedButton>
+                        <Link
+                            className="font-medium text-base m-0 flex-center w-[307px] h-[48px] text-[#E74362] border-[#E74362] border-solid border-[1px] rounded-md"
+                            href={links.booksArchive}
+                        >
+                            История брони
+                        </Link>
                             </>
                         )}
                     </div>
@@ -98,24 +113,54 @@ const ProfileComponentDesktop = ({ landlord }) => {
                         </Link>
                     </div>
                 </div>
-                <div className="col-span-2 flex flex-col justify-start max-h-[800px] overflow-y-auto">
-                    <h3 className="text-white text-[36px] font-medium">
-                        Текущие заявки
-                    </h3>
-                    {places.map((place) => {
-                        return (
-                            place.books.length > 0 &&
-                            place.status === "resolved" && 
-                            place.archived === false && (
-                                <ProfileAccordeon
-                                    key={place.id}
-                                    {...place}
-                                    user={user.userRole}
-                                />
-                            )
-                        );
-                    })}
-                </div>
+                {user.userRole === "landlord" ? (
+                    <div className="col-span-2 flex flex-col justify-start max-h-[800px] overflow-y-auto">
+                        <h3 className="text-white text-[36px] font-medium">
+                            Текущие заявки
+                        </h3>
+                        {places.map((place) => {
+                            return (
+                                place.books.length > 0 &&
+                                place.status === "resolved" &&
+                                place.archived === false && (
+                                    <ProfileAccordeon
+                                        key={place.id}
+                                        {...place}
+                                        user={user.userRole}
+                                    />
+                                )
+                            );
+                        })}
+                    </div>
+                ) : (
+                    <div className="col-span-2 flex flex-col justify-start max-h-[800px] overflow-y-auto">
+                        <h3 className="text-white text-[36px] font-medium">
+                            Просмотр брони
+                        </h3>
+                        <div className="bg-transparent mt-[18px]">
+                        <IsolatedPendingAccordionDesktop title='Заявки' username={user.username} userRole={user.userRole} books={books} />
+                        <IsolatedAcceptedAccordionDesktop title='Подтвержденная бронь' username={user.username} userRole={user.userRole} books={books} />
+                            {/* <IsolatedAccordionDesktop
+                                isActive={true}
+                                isPending={false}
+                                // data={activeArr}
+                                titleAccordeon={"Заявки на бронь"}
+                            />
+                            <IsolatedAccordionDesktop
+                                isActive={false}
+                                isPending={true}
+                                // data={successArr}
+                                titleAccordeon={"Подтвержденная бронь"}
+                            />
+                            <IsolatedAccordionDesktop
+                                isActive={false}
+                                isPending={true}
+                                // data={pendingArr}
+                                titleAccordeon={"Отклонённая бронь"}
+                            /> */}
+                        </div>
+                    </div>
+                )}
             </div>
         </section>
     );

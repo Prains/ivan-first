@@ -25,27 +25,6 @@ const ActualBooking = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const data = [
-        {
-            id: 1,
-            name: "Серый Волк",
-            date: "21 мая 18.00 - 22.00",
-            image: userRed,
-        },
-        {
-            id: 2,
-            name: "Иван Царевич",
-            date: "22 мая 18.00 - 24.00",
-            image: userRed,
-        },
-        {
-            id: 3,
-            name: "Иван Царевич",
-            date: "22 мая 18.00 - 24.00",
-            image: userRed,
-        },
-    ];
-
     return (
         <section className="bg-[#0C1622] min-h-[98vh] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover relative px-[16px] py-[16px] w-full">
             <div className="h-[90vh] bg-[#EBF8FF] rounded-[6px] py-[16px]">

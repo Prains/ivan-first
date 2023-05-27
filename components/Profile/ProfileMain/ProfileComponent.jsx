@@ -6,7 +6,7 @@ const ProfileComponent = () => {
     return (
         <section>
             <ProfileMobileComponent landlord={landlord} />
-            <ProfileComponentDesktop landlord={landlord}/>
+            <ProfileComponentDesktop />
         </section>
     );
 };
