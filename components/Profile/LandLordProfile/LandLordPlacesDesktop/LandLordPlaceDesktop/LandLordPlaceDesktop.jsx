@@ -9,7 +9,7 @@ const LandLordPlaceDesktop = ({ status, title, description, photos, id }) => {
     const changeData = {data: {archived: true}}
 
     const handlePutPlaceToArchive = () => {
-        api.changeProfileData(changeData, id).then(() => {
+        api.changePlaceData(changeData, id).then(() => {
             window.location.reload();
         });
     }

@@ -8,7 +8,7 @@ const ArchiveDesktopPlace = ({ id, title, description, photos }) => {
     const changeData = { data: { archived: false } };
 
     const handlePutPlaceToActive = () => {
-        api.changeProfileData(changeData, id).then(() => {
+        api.changePlaceData(changeData, id).then(() => {
             window.location.reload();
         });
     };

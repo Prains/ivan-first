@@ -5,11 +5,11 @@ import Image from "next/image";
 import LandLordPlaceMobileOverlay from "./LandLordPlaceMobileOverlay";
 import api from "@/utils/api";
 
-const LandLordPlaceMobile = ({ status, title, description, photos }) => {
+const LandLordPlaceMobile = ({ id, status, title, description, photos }) => {
     const changeData = { data: { archived: true } };
 
     const handlePutPlaceToArchive = () => {
-        api.changeProfileData(changeData, id).then(() => {
+        api.changePlaceData(changeData, id).then(() => {
             window.location.reload();
         });
     };

@@ -20,7 +20,7 @@ class Api {
         ).then((res) => res.json());
     }
 
-    changeProfileData(data, id) {
+    changePlaceData(data, id) {
         return fetch(`${links.backend}/places/${id}`, {
             method: "put",
             headers: this._headers,
