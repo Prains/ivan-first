@@ -9,13 +9,16 @@ class Auth {
       Authorization: apiToken,
     };
   }
-  register(username, email, userRole, type, password) {
+  register(username, email, userRole, type, password, organizationName, inn, position) {
     return fetch(`${links.backend}/auth/local/register`, {
       method: "post",
       headers: this._headers,
       body: JSON.stringify({
         username: username,
         email: email,
+        organizationName: organizationName,
+        inn: inn,
+        position: position,
         userRole: userRole,
         type: type,
         password: password,

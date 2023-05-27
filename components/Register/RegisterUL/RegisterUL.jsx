@@ -28,7 +28,7 @@ const RegisterUL = ({ userRole }) => {
             placeholder: "ФИО",
             focusBorderColor: "#E74362",
             label: "ФИО:",
-            htmlType: "text",
+            type: "text",
             isRequired: true,
             onChange: (e) => {
                 usernameChange(e);
@@ -41,7 +41,7 @@ const RegisterUL = ({ userRole }) => {
             placeholder: "Почта",
             focusBorderColor: "#E74362",
             label: "Почта:",
-            htmlType: "email",
+            type: "email",
             isRequired: true,
             minLength: "6",
             onChange: (e) => {
@@ -55,7 +55,7 @@ const RegisterUL = ({ userRole }) => {
             placeholder: "Телефон",
             focusBorderColor: "#E74362",
             label: "Телефон:",
-            htmlType: "tel",
+            type: "tel",
             onChange: (e) => {
                 phoneChange(e);
             },
@@ -67,7 +67,7 @@ const RegisterUL = ({ userRole }) => {
             placeholder: "Название юр. лица",
             focusBorderColor: "#E74362",
             label: "Название юр. лица:",
-            htmlType: "text",
+            type: "text",
             isRequired: true,
             onChange: (e) => {
                 organizationNameChange(e);
@@ -80,8 +80,10 @@ const RegisterUL = ({ userRole }) => {
             placeholder: "ИНН",
             focusBorderColor: "#E74362",
             label: "ИНН:",
-            htmlType: "number",
+            type: "number",
             isRequired: true,
+            minLength: "10",
+            maxLength: "10",
             onChange: (e) => {
                 innChange(e);
             },
@@ -93,7 +95,7 @@ const RegisterUL = ({ userRole }) => {
             placeholder: "Должность",
             focusBorderColor: "#E74362",
             label: "Должность:",
-            htmlType: "text",
+            type: "text",
             isRequired: true,
             onChange: (e) => {
                 positionChange(e);
@@ -106,7 +108,7 @@ const RegisterUL = ({ userRole }) => {
             placeholder: "Пароль",
             focusBorderColor: "#E74362",
             label: "Пароль:",
-            htmlType: "password",
+            type: "password",
             isRequired: true,
             minLength: "6",
             onChange: (e) => {
@@ -120,7 +122,7 @@ const RegisterUL = ({ userRole }) => {
             placeholder: "Повторите пароль",
             focusBorderColor: "#E74362",
             label: "Повторите пароль:",
-            htmlType: "password",
+            type: "password",
             isRequired: true,
             onChange: (e) => {
                 confirmPasswordChange(e);
@@ -132,7 +134,7 @@ const RegisterUL = ({ userRole }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (password === confirmPassword) {
-            auth.register(username, email, userRole, type, password).then(
+            auth.register(username, email, userRole, type, password, organizationName, inn, position).then(
                 (res) => {
                     authHandling(setError, res);
                 }
