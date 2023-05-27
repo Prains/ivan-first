@@ -12,7 +12,7 @@ class Api {
 
     getUserPlaces(id) {
         return fetch(
-            `${links.backend}/users/${id}?populate[0]=places&populate[1]=places.books&populate[2]=places.books.book&populate[3]=places.books.owner`, 
+            `${links.backend}/users/${id}?populate[0]=places&populate[1]=places.books&populate[2]=places.photos&populate[3]=places.books.book&populate[4]=places.books.owner`, 
             {
                 method: "get",
                 headers: this._headers,
@@ -22,6 +22,14 @@ class Api {
 
     changePlaceData(data, id) {
         return fetch(`${links.backend}/places/${id}`, {
+            method: "put",
+            headers: this._headers,
+            body: JSON.stringify(data),
+        }).then((res) => res.json());
+    }
+
+    changeBookData(data, id) {
+        return fetch(`${links.backend}/books/${id}`, {
             method: "put",
             headers: this._headers,
             body: JSON.stringify(data),

@@ -106,7 +106,8 @@ const ProfileComponentDesktop = ({ landlord }) => {
                     {places.map((place) => {
                         return (
                             place.books.length > 0 &&
-                            place.status === "resolved" && (
+                            place.status === "resolved" && 
+                            place.archived === false && (
                                 <ProfileAccordeon
                                     key={place.id}
                                     {...place}

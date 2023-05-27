@@ -56,7 +56,7 @@ const ViewBookingMobile = ({landlord}) => {
 
     return (
         <section
-            className='block lg:hidden bg-[#0C1622] h-[100vh] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover relative px-[16px] py-[16px] w-full'>
+            className='block lg:hidden bg-[#0C1622] min-h-[98vh] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover relative px-[16px] py-[16px] w-full'>
             {landlord ?
                 <>
                     <div className='bg-[#EBF8FF] mt-[18px] rounded-[6px]'>

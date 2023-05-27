@@ -3,24 +3,45 @@ import Link from "next/link";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import {CloseButton} from "@/images/icons/CloseButton";
 import {AcceptButton} from "@/images/icons/AcceptButton";
+import api from "@/utils/api";
 
-const ActualBookingItem = ({name, image, date}) => {
+const ActualBookingItem = ({image, book, owner, id}) => {
+    const acceptBookData = { data: { book: { status: "accepted", startDate: book.startDate, endDate: book.endDate, time: book.time} } };
+    const cancelBookData = { data: { book: { status: "canceled", startDate: book.startDate, endDate: book.endDate, time: book.time} } };
+
+    const handleAcceptBook = () => {
+        api.changeBookData(acceptBookData, id).then(() => {
+            window.location.reload();
+        });
+    };
+
+    const handleCancelBook = () => {
+        api.changeBookData(cancelBookData, id).then(() => {
+            window.location.reload();
+        });
+    };
+
     return (
-        <Link href='/'>
-            <div className='w-full grid grid-cols-5 mt-[8px]'>
-                <div className='col-span-1'>
+        <div className="flex mx-[10px]">
+            <Link href="/" className='w-full flex mt-[8px] mx-auto'>
+                <div>
                     <Image className='h-[40px] object-contain rounded-[2px]' src={image} alt='картинка'/>
                 </div>
-                <div className='col-span-3'>
-                    <p className='text-ellipsis text-black text-[14px] max-h-[36px] font-medium'>{name}</p>
-                    <p className='text-[#E74362] text-[14px] font-medium'><span>{date}</span></p>
+                <div className="flex-col">
+                    <p className='text-ellipsis text-black text-[14px] max-h-[36px] font-medium'>{owner.username}</p>
+                    <p className='text-[#E74362] text-sm w-[150px] font-medium'><span>{book.startDate} {book.time}</span></p>
                 </div>
-                <div className='col-span-1 flex gap-[3px] items-center'>
-                    <Image className='h-[24px] w-[28px]' src={AcceptButton} alt='кнопка соглашения' />
+
+            </Link>
+            <div className='flex gap-[3px] items-center'>
+                    <IsolatedButton onClick={handleAcceptBook} className='h-[24px] w-[28px] p-0'>
+                    <Image src={AcceptButton} alt='кнопка соглашения' />
+                    </IsolatedButton>
+                    <IsolatedButton onClick={handleCancelBook} className='h-[24px] w-[28px] p-0'>
                     <Image className='h-[24px] w-[28px]' src={CloseButton} alt='кнопка отмены' />
+                    </IsolatedButton>
                 </div>
-            </div>
-        </Link>
+        </div>
 
     );
 };

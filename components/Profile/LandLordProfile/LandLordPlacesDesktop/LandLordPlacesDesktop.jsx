@@ -34,6 +34,7 @@ const LandLordPlacesDesktop = () => {
                 </h1>
                 <div className="flex-center-col justify-between gap-[24px] max-h-[800px] mb-[35px] overflow-y-scroll">
                     {places.map((place) => {
+                        console.log(place)
                          return (
                             place.status !== "canceled" && place.archived !== true && <LandLordPlaceDesktop
                                 key={place.id}

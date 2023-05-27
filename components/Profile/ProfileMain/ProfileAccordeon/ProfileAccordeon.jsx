@@ -6,12 +6,9 @@ const ProfileAccordeon = ({ title, books, user }) => {
       <h3 className="mt-[20px] font-medium text-[24px]">{title}</h3>
       {books.map((item) => {
         return (
-          <ProfileAccordeonItem key={item.id} {...item} user={user} />
+          item.book.status === "pending" && <ProfileAccordeonItem key={item.id} {...item} user={user} />
         )
       })}
-      {/* <ProfileAccordeonItem landlord={user} />
-      <ProfileAccordeonItem landlord={user} />
-      <ProfileAccordeonItem landlord={user} /> */}
     </div>
   );
 };
