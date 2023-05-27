@@ -4,7 +4,7 @@ import { userRed } from "@/images/icons/userRed/userRed";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import { SettingsIcon } from "@/images/icons";
 import ProfileContainerActiveItem from "@/components/Profile/ProfileMain/ProfileContainerActiveItem/ProfileContainerActiveItem";
-import { IsolatedAcceptedAccordionDesktop, IsolatedPendingAccordionDesktop } from "@/components/ui/IsolatedAccordionDesktop/IsolatedAccordionDesktop";
+import { IsolatedAccordionDesktop } from "@/components/ui/IsolatedAccordionDesktop/IsolatedAccordionDesktop";
 import ProfileAccordeon from "@/components/Profile/ProfileMain/ProfileAccordeon/ProfileAccordeon";
 import useFindUser from "@/hooks/useFindUser";
 import Link from "next/link";
@@ -14,8 +14,6 @@ import api from "@/utils/api";
 
 const ProfileComponentDesktop = () => {
     const user = useFindUser();
-
-    const data = [{ id: 0, title: 'Заявки'}, { id: 1, title: 'Подтвержденная бронь'}];
 
     if (!user) {
         return null;
@@ -138,26 +136,8 @@ const ProfileComponentDesktop = () => {
                             Просмотр брони
                         </h3>
                         <div className="bg-transparent mt-[18px]">
-                        <IsolatedPendingAccordionDesktop title='Заявки' username={user.username} userRole={user.userRole} books={books} />
-                        <IsolatedAcceptedAccordionDesktop title='Подтвержденная бронь' username={user.username} userRole={user.userRole} books={books} />
-                            {/* <IsolatedAccordionDesktop
-                                isActive={true}
-                                isPending={false}
-                                // data={activeArr}
-                                titleAccordeon={"Заявки на бронь"}
-                            />
-                            <IsolatedAccordionDesktop
-                                isActive={false}
-                                isPending={true}
-                                // data={successArr}
-                                titleAccordeon={"Подтвержденная бронь"}
-                            />
-                            <IsolatedAccordionDesktop
-                                isActive={false}
-                                isPending={true}
-                                // data={pendingArr}
-                                titleAccordeon={"Отклонённая бронь"}
-                            /> */}
+                        <IsolatedAccordionDesktop status="pending" title='Заявки' username={user.username} userRole={user.userRole} books={books} />
+                        <IsolatedAccordionDesktop status="accepted" title='Подтвержденная бронь' username={user.username} userRole={user.userRole} books={books} />
                         </div>
                     </div>
                 )}
