@@ -62,7 +62,7 @@ const ProfileComponentDesktop = () => {
                             className="font-medium text-base m-0 flex-center w-[307px] mt-5 h-[48px] text-[#E74362] border-[#E74362] border-solid border-[1px] rounded-md"
                             href={links.profile}
                         >
-                            Текущая бронь
+                            Текущие брони
                         </Link>
                     )}
                     {user.userRole === "landlord" ? (
