@@ -11,7 +11,7 @@ import links from "@/utils/links";
 import { useEffect, useState } from "react";
 import api from "@/utils/api";
 
-const ArchiveBookingDesktop = ({ landlord }) => {
+const ArchiveBookingDesktop = () => {
     const user = useFindUser();
 
     if (!user) {
@@ -43,7 +43,9 @@ const ArchiveBookingDesktop = ({ landlord }) => {
                         {user.username}
                     </h3>
                     <p className="font-normal text-center w-[150px] text-[18px] text-white mt-[13px] py-[5px] px-[7px] rounded-[8px] border-[1px] border-white">
-                        {user.userRole === "landlord" ? "Арендодатель" : "Арендатор"}
+                        {user.userRole === "landlord"
+                            ? "Арендодатель"
+                            : "Арендатор"}
                     </p>
                     {user.userRole === "landlord" && (
                         <Link
@@ -54,9 +56,12 @@ const ArchiveBookingDesktop = ({ landlord }) => {
                         </Link>
                     )}
                     {user.userRole === "landlord" ? (
-                        <IsolatedButton className="w-[100%] mt-[20px] bg-transparent border-2 border-white rounded-[6px] py-[14px]">
+                        <Link
+                            className="font-medium text-base m-0 flex-center w-[307px] h-[48px] text-[#E74362] border-[#E74362] border-solid border-[1px] rounded-md"
+                            href={links.yourPlaces}
+                        >
                             Ваши площадки
-                        </IsolatedButton>
+                        </Link>
                     ) : (
                         <Link
                             className="font-medium text-base m-0 flex-center w-[307px] mt-5 h-[48px] text-[#E74362] border-[#E74362] border-solid border-[1px] rounded-md"
@@ -94,22 +99,29 @@ const ArchiveBookingDesktop = ({ landlord }) => {
                             src={SettingsIcon}
                             alt="иконка с сеттингами"
                         />
-                        <Link 
-                        href="#"
-                        className="font-medium text-base m-0 flex-center w-full h-[48px] bg-transparent border-[1px] border-white rounded-[6px] py-[14px]">
+                        <Link
+                            href="#"
+                            className="font-medium text-base m-0 flex-center w-full h-[48px] bg-transparent border-[1px] border-white rounded-[6px] py-[14px]"
+                        >
                             Настройки профиля
                         </Link>
                     </div>
                 </div>
                 <div className="col-span-2 flex flex-col justify-start max-h-[800px] overflow-y-auto">
                     <h3 className="text-white text-[36px] font-medium">
-                        {user.userRole === "landlord" ? "Архив брони" : "История брони"}
+                        {user.userRole === "landlord"
+                            ? "Архив брони"
+                            : "История брони"}
                     </h3>
-                        {user.userRole === "landlord" ?
+                    {user.userRole === "landlord" ? (
                         123
-                        :
-                        <ArchiveBookingContainer username={user.username} userRole={user.userRole} books={books} />
-                        }
+                    ) : (
+                        <ArchiveBookingContainer
+                            username={user.username}
+                            userRole={user.userRole}
+                            books={books}
+                        />
+                    )}
                     {/* <ArchiveBookingContainer data={data} landlord={landlord} /> */}
                 </div>
             </div>

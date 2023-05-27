@@ -8,9 +8,7 @@ import links from "@/utils/links";
 import { useEffect, useState } from "react";
 import api from "@/utils/api";
 
-const activeBooks = true;
-
-const ProfileMobileComponent = ({ landlord }) => {
+const ProfileMobileComponent = () => {
     const user = useFindUser();
 
     if (!user) {
@@ -78,12 +76,18 @@ const ProfileMobileComponent = ({ landlord }) => {
                 </div>
             ) : (
                 <div className="flex flex-col">
-                    <IsolatedButton className="mt-[30px] bg-[#E74362] rounded-[6px]">
-                        Текущая бронь
-                    </IsolatedButton>
-                    <IsolatedButton className="bg-transparent border-2 border-white rounded-[6px] mt-[16px]">
-                        История брони
-                    </IsolatedButton>
+                        <Link
+                            className="text-sm font-semibold mt-[30px] h-[32px] text-center flex-center bg-[#E74362] rounded-[6px]"
+                            href={links.viewBooks}
+                        >
+                            Текущие брони
+                        </Link>
+                    <Link
+                            className="text-sm font-semibold mt-[16px] h-[32px] text-center flex-center bg-transparent border-white border-[1px] rounded-[6px]"
+                            href={links.booksArchive}
+                        >
+                            История брони
+                        </Link>
                 </div>
             )}
         </section>

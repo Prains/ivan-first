@@ -5,7 +5,7 @@ const ProfileComponent = () => {
     const landlord = false
     return (
         <section>
-            <ProfileMobileComponent landlord={landlord} />
+            <ProfileMobileComponent />
             <ProfileComponentDesktop />
         </section>
     );
