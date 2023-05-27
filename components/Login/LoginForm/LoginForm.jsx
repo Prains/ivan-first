@@ -23,7 +23,7 @@ const LoginForm = () => {
             placeholder: "Почта",
             focusBorderColor: "#E74362",
             label: "Почта:",
-            htmlType: "email",
+            type: "email",
             isRequired: true,
             minLength: "6",
             onChange: (e) => {
@@ -37,7 +37,7 @@ const LoginForm = () => {
             placeholder: "Пароль",
             focusBorderColor: "#E74362",
             label: "Пароль:",
-            htmlType: "password",
+            type: "password",
             isRequired: true,
             minLength: "6",
             onChange: (e) => {

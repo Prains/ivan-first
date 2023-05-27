@@ -20,7 +20,6 @@ const ProfileComponentDesktop = ({ landlord }) => {
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [places, setPlaces] = useState([]);
-    console.log(places);
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
@@ -64,9 +63,9 @@ const ProfileComponentDesktop = ({ landlord }) => {
                     <div className="relative w-[307px] mt-[20px]">
                         {user.userRole === "landlord" ? (
                             <>
-                                <span className="absolute -right-2 -top-2 z-10 text-white text-[16px] py-[2px] px-[10px] font-medium bg-[#E74362] rounded-[50px]">
+                                {/* <span className="absolute -right-2 -top-2 z-10 text-white text-[16px] py-[2px] px-[10px] font-medium bg-[#E74362] rounded-[50px]">
                                     1
-                                </span>
+                                </span> */}
                                 <IsolatedButton
                                     size="lg"
                                     className="font-medium text-base w-[307px] bg-transparent border-[1px] border-white rounded-[6px] py-[14px]"

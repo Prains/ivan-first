@@ -8,8 +8,26 @@ import { bgPlace } from "@/images/Place";
 import api from "@/utils/api";
 
 const ProfileAccordeonItem = ({ user, owner, book, id }) => {
-    const acceptBookData = { data: { book: { status: "accepted", startDate: book.startDate, endDate: book.endDate, time: book.time} } };
-    const cancelBookData = { data: { book: { status: "canceled", startDate: book.startDate, endDate: book.endDate, time: book.time} } };
+    const acceptBookData = {
+        data: {
+            book: {
+                status: "accepted",
+                startDate: book.startDate,
+                endDate: book.endDate,
+                time: book.time,
+            },
+        },
+    };
+    const cancelBookData = {
+        data: {
+            book: {
+                status: "canceled",
+                startDate: book.startDate,
+                endDate: book.endDate,
+                time: book.time,
+            },
+        },
+    };
 
     const handleAcceptBook = () => {
         api.changeBookData(acceptBookData, id).then(() => {
@@ -81,19 +99,10 @@ const ProfileAccordeonItem = ({ user, owner, book, id }) => {
                                         Отклонить
                                     </IsolatedButton>
                                 </div>
-                                <div>
-                                    <IsolatedButton className="w-[100%] lg:w-[100%] text-[#E74362] bg-transparent border-[#E74362] border-2 mt-[8px] rounded-[6px]">
-                                        Детали
-                                    </IsolatedButton>
-                                </div>
                             </div>
                         </>
                     ) : (
-                        <>
-                            <IsolatedButton className="md:w-[120px] lg:w-[240px] text-[#D9D9D9] bg-transparent border-[#D9D9D9] border-2 mt-[8px] rounded-[6px]">
-                                Детали
-                            </IsolatedButton>
-                        </>
+                        ""
                     )}
                 </div>
             </div>
