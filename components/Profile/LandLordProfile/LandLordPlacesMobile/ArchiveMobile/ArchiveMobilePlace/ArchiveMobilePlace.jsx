@@ -4,7 +4,7 @@ import { Card, ButtonGroup, CardBody } from "@chakra-ui/react";
 import Image from "next/image";
 import api from "@/utils/api";
 
-const ArchiveMobilePlace = ({ title, description, photos }) => {
+const ArchiveMobilePlace = ({ id, title, description, photos }) => {
     const changeData = { data: { archived: false } };
 
     const handlePutPlaceToActive = () => {
