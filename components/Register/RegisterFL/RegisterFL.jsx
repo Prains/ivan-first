@@ -25,7 +25,7 @@ const RegisterFL = ({ userRole }) => {
             placeholder: "ФИО",
             focusBorderColor: "#E74362",
             label: "ФИО:",
-            htmlType: "text",
+            type: "text",
             isRequired: true,
             onChange: (e) => {
                 usernameChange(e);
@@ -38,7 +38,7 @@ const RegisterFL = ({ userRole }) => {
             placeholder: "Почта",
             focusBorderColor: "#E74362",
             label: "Почта:",
-            htmlType: "email",
+            type: "email",
             minLength: "6",
             isRequired: true,
             onChange: (e) => {
@@ -52,7 +52,7 @@ const RegisterFL = ({ userRole }) => {
             placeholder: "Телефон",
             focusBorderColor: "#E74362",
             label: "Телефон:",
-            htmlType: "tel",
+            type: "tel",
             onChange: (e) => {
                 phoneChange(e);
             },
@@ -64,7 +64,7 @@ const RegisterFL = ({ userRole }) => {
             placeholder: "Пароль",
             focusBorderColor: "#E74362",
             label: "Пароль:",
-            htmlType: "password",
+            type: "password",
             minLength: "6",
             isRequired: true,
             onChange: (e) => {
@@ -78,7 +78,7 @@ const RegisterFL = ({ userRole }) => {
             placeholder: "Повторите пароль",
             focusBorderColor: "#E74362",
             label: "Повторите пароль:",
-            htmlType: "password",
+            type: "password",
             isRequired: true,
             onChange: (e) => {
                 confirmPasswordChange(e);

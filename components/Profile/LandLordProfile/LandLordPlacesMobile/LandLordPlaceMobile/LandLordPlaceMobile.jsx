@@ -20,7 +20,7 @@ const LandLordPlaceMobile = ({ isModerated, title, description }) => {
 
                 <article className="w-[92%] mx-auto">
                     <h4 className="text-base font-medium">{title}</h4>
-                    <p className="text-sm font-normal max-h-[40px] whitespace-normal truncate">
+                    <p className="text-sm font-normal h-[40px] whitespace-normal truncate">
                         {description}
                     </p>
                 </article>

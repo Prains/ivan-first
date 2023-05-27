@@ -8,7 +8,7 @@ import api from "@/utils/api";
 const LandLordPlacesDesktop = () => {
     const user = useFindUser();
 
-    if (!user) {
+    if (!user || user.userRole === "tennant") {
         return null;
     }
 
