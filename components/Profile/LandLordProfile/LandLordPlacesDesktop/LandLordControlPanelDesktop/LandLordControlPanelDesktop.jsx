@@ -4,17 +4,17 @@ import { Avatar, Tag, ButtonGroup } from "@chakra-ui/react";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import links from "@/utils/links";
 
-const LandLordControlPanelDesktop = () => {
+const LandLordControlPanelDesktop = ({ user }) => {
     return (
         <div className="flex-center-col justify-start max-w-[320px]">
             <div>
                 <Avatar size="xl" bg="#E74362" />
             </div>
             <h2 className="text-[28px] text-center font-medium mt-[26px] mb-[13px]">
-                Developer Developerovich
+                {user.username}
             </h2>
             <Tag className=" mb-[22px] w-[150px] h-[40px] text-lg font-normal flex-center text-white border-[1px] bg-transparent">
-                Погромист
+                Арендодатель
             </Tag>
             <ButtonGroup className="flex-center-col gap-5">
                 <Link
@@ -44,7 +44,11 @@ const LandLordControlPanelDesktop = () => {
                 >
                     Архив площадок
                 </Link>
-                <IsolatedButton className="w-full m-0" size="lg" variant="outline">
+                <IsolatedButton
+                    className="w-full m-0"
+                    size="lg"
+                    variant="outline"
+                >
                     Настройки профиля
                 </IsolatedButton>
             </ButtonGroup>
