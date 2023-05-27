@@ -1,10 +1,17 @@
-"use client"
+"use client";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
-import { bgPlace } from "@/images/Place";
 import { Card, CardHeader, ButtonGroup, CardBody } from "@chakra-ui/react";
 import Image from "next/image";
+import api from "@/utils/api";
 
-const ArchiveDesktopPlace = ({ title, description, photos }) => {
+const ArchiveDesktopPlace = ({ id, title, description, photos }) => {
+    const changeData = { data: { archived: false } };
+
+    const handlePutPlaceToActive = () => {
+        api.changeProfileData(changeData, id).then(() => {
+            window.location.reload();
+        });
+    };
     return (
         <Card
             variant="unstyled"
@@ -31,10 +38,11 @@ const ArchiveDesktopPlace = ({ title, description, photos }) => {
                 </h4>
                 <ButtonGroup className="flex-col w-[298px] mx-auto my-3 gap-4">
                     <IsolatedButton
+                        onClick={handlePutPlaceToActive}
                         size="md"
                         className="w-full m-0 bg-[#E74362] text-white text-base font-medium"
                     >
-                      Сделать активной
+                        Сделать активной
                     </IsolatedButton>
                     <IsolatedButton
                         size="md"

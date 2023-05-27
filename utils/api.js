@@ -11,9 +11,20 @@ class Api {
     }
 
     getUserPlaces(id) {
-        return fetch(`${links.backend}/users/${id}?populate[places][populate]=*`, {
-            method: "get",
+        return fetch(
+            `${links.backend}/users/${id}?populate[places][populate]=*`,
+            {
+                method: "get",
+                headers: this._headers,
+            }
+        ).then((res) => res.json());
+    }
+
+    changeProfileData(data, id) {
+        return fetch(`${links.backend}/places/${id}`, {
+            method: "put",
             headers: this._headers,
+            body: JSON.stringify(data),
         }).then((res) => res.json());
     }
 }

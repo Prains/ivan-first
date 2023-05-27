@@ -3,8 +3,17 @@ import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import { Card, CardHeader, ButtonGroup, CardBody } from "@chakra-ui/react";
 import Image from "next/image";
 import LandLordPlaceDesktopOverlay from "./LandLordPlaceDesktopOverlay";
+import api from "@/utils/api";
 
-const LandLordPlaceDesktop = ({ status, title, description, photos }) => {
+const LandLordPlaceDesktop = ({ status, title, description, photos, id }) => {
+    const changeData = {data: {archived: true}}
+
+    const handlePutPlaceToArchive = () => {
+        api.changeProfileData(changeData, id).then(() => {
+            window.location.reload();
+        });
+    }
+
     return (
         <Card
             variant="unstyled"
@@ -56,6 +65,7 @@ const LandLordPlaceDesktop = ({ status, title, description, photos }) => {
                         Редактировать площадку
                     </IsolatedButton>
                     <IsolatedButton
+                        onClick={handlePutPlaceToArchive}
                         isDisabled={status === "pending"}
                         size="md"
                         variant="outline"

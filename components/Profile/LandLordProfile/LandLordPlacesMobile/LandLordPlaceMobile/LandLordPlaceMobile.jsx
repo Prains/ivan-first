@@ -1,11 +1,19 @@
 "use client";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
-import { bgPlace } from "@/images/Place";
 import { Card, ButtonGroup, CardBody } from "@chakra-ui/react";
 import Image from "next/image";
 import LandLordPlaceMobileOverlay from "./LandLordPlaceMobileOverlay";
+import api from "@/utils/api";
 
 const LandLordPlaceMobile = ({ status, title, description, photos }) => {
+    const changeData = { data: { archived: true } };
+
+    const handlePutPlaceToArchive = () => {
+        api.changeProfileData(changeData, id).then(() => {
+            window.location.reload();
+        });
+    };
+
     return (
         <Card className="w-[288px]">
             <CardBody className="flex-center-col p-0">
@@ -52,6 +60,7 @@ const LandLordPlaceMobile = ({ status, title, description, photos }) => {
                         Редактировать площадку
                     </IsolatedButton>
                     <IsolatedButton
+                        onClick={handlePutPlaceToArchive}
                         isDisabled={status === "pending"}
                         size="sm"
                         variant="outline"
