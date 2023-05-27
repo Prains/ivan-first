@@ -5,14 +5,16 @@ import { Card, ButtonGroup, CardBody } from "@chakra-ui/react";
 import Image from "next/image";
 import LandLordPlaceMobileOverlay from "./LandLordPlaceMobileOverlay";
 
-const LandLordPlaceMobile = ({ isModerated, title, description }) => {
+const LandLordPlaceMobile = ({ status, title, description, photos }) => {
     return (
         <Card className="w-[288px]">
             <CardBody className="flex-center-col p-0">
                 <div className="h-[140px] relative">
-                    {!isModerated && <LandLordPlaceMobileOverlay />}
+                    {status === "pending" && <LandLordPlaceMobileOverlay />}
                     <Image
-                        src={bgPlace}
+                        width="288"
+                        height="140"
+                        src={`http://89.232.167.133:1337${photos[0].url}`}
                         alt="Фото площадки"
                         className="h-full"
                     />
@@ -26,11 +28,11 @@ const LandLordPlaceMobile = ({ isModerated, title, description }) => {
                 </article>
                 <ButtonGroup className="flex-col w-[92%] mx-auto my-3 gap-2">
                     <IsolatedButton
-                        isDisabled={!isModerated}
+                        isDisabled={status === "pending"}
                         size="sm"
-                        variant={isModerated ? "" : "outline"}
+                        variant={status === "pending" ? "" : "outline"}
                         className={
-                            isModerated
+                            status !== "pending"
                                 ? "w-full m-0 bg-[#E74362] text-white"
                                 : "w-full m-0 bg-transparent text-[#464646]"
                         }
@@ -38,11 +40,11 @@ const LandLordPlaceMobile = ({ isModerated, title, description }) => {
                         Просмотр брони
                     </IsolatedButton>
                     <IsolatedButton
-                        isDisabled={!isModerated}
+                        isDisabled={status === "pending"}
                         size="sm"
-                        variant={isModerated ? "" : "outline"}
+                        variant={status === "pending" ? "" : "outline"}
                         className={
-                            isModerated
+                            status !== "pending"
                                 ? "w-full m-0 bg-[#E74362] text-white"
                                 : "w-full m-0 bg-transparent text-[#464646]"
                         }
@@ -50,7 +52,7 @@ const LandLordPlaceMobile = ({ isModerated, title, description }) => {
                         Редактировать площадку
                     </IsolatedButton>
                     <IsolatedButton
-                        isDisabled={!isModerated}
+                        isDisabled={status === "pending"}
                         size="sm"
                         variant="outline"
                         className="w-full m-0 border-[#E74362] text-black"

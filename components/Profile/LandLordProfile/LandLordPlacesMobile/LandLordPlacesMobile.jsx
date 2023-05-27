@@ -33,10 +33,9 @@ const LandLordPlacesMobile = () => {
             >
                 {places.map((place) => {
                     return (
-                        <LandLordPlaceMobile
+                        place.status !== "canceled" && place.archived !== true && <LandLordPlaceMobile
                             key={place.id}
                             {...place}
-                            isModerated={true}
                         />
                     );
                 })}

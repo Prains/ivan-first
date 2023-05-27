@@ -11,7 +11,7 @@ class Api {
     }
 
     getUserPlaces(id) {
-        return fetch(`${links.backend}/users/${id}?populate=*`, {
+        return fetch(`${links.backend}/users/${id}?populate[places][populate]=*`, {
             method: "get",
             headers: this._headers,
         }).then((res) => res.json());
