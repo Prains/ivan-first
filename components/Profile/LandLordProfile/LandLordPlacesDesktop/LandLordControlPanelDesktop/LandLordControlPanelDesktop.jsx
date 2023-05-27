@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
 import { Avatar, Tag, ButtonGroup } from "@chakra-ui/react";
-import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
+import { SettingsIcon } from "@/images/icons";
 import links from "@/utils/links";
+import Image from "next/image";
 
 const LandLordControlPanelDesktop = ({ user }) => {
     return (
@@ -44,13 +45,19 @@ const LandLordControlPanelDesktop = ({ user }) => {
                 >
                     Архив площадок
                 </Link>
-                <IsolatedButton
-                    className="w-full m-0"
-                    size="lg"
-                    variant="outline"
-                >
-                    Настройки профиля
-                </IsolatedButton>
+                <div className="relative w-full">
+                    <Image
+                        className="absolute left-3 top-3 w-[24px] h-[24px]"
+                        src={SettingsIcon}
+                        alt="иконка с сеттингами"
+                    />
+                    <Link
+                        className="font-medium text-base flex-center w-[307px] h-[48px] text-white border-white border-solid border-[1px] rounded-md"
+                        href="#"
+                    >
+                        Настройки профиля
+                    </Link>
+                </div>
             </ButtonGroup>
         </div>
     );
