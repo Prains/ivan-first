@@ -12,7 +12,7 @@ class Api {
 
     getAllPlaces() {
         return fetch(
-            `${links.backend}/places`, 
+            `${links.backend}/places?populate=*`, 
             {
                 method: "get",
                 headers: this._headers,
