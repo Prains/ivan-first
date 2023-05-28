@@ -60,9 +60,12 @@ const ViewBookingMobile = () => {
                         /> */}
                     </div>
                     <div>
-                        <IsolatedButton className="w-full mt-[20px] text-[#E74362] text-[14px] bg-transparent border-[#E74362] border-2 rounded-[6px]">
+                    <Link
+                            className="text-sm font-semibold mt-[16px] h-[32px] text-center flex-center bg-[#E74362] rounded-[6px]"
+                            href={links.booksArchive}
+                        >
                             Архив брони
-                        </IsolatedButton>
+                        </Link>
                     </div>
                 </>
             ) : (
