@@ -89,8 +89,8 @@ const ArchiveBookingDesktop = () => {
                         ) : (
                             <>
                                 <Link
-                                    className="font-medium text-base m-0 flex-center w-[307px] h-[48px] text-[#E74362] border-[#E74362] border-solid border-[1px] rounded-md"
-                                    href={links.profile}
+                                    className="font-medium text-base m-0 mt-5 flex-center w-[307px] h-[48px] text-[#E74362] border-[#E74362] border-solid border-[1px] rounded-md"
+                                    href={links.booksArchive}
                                 >
                                     История брони
                                 </Link>

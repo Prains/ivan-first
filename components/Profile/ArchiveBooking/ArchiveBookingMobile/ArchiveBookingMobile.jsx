@@ -27,7 +27,18 @@ const ArchiveBookingMobile = () => {
     }, []);
     return (
         <section className="block lg:hidden bg-[#0C1622] min-h-[98vh] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover relative px-[16px] py-[16px] w-full">
-            {user.userRole === "landlord" ? (123
+            {user.userRole === "landlord" ? (
+                places.map((place) => {
+                    return (
+                        <IsolatedAccordeonLandLord
+                            key={place.id}
+                            titleAccordeon={place.title}
+                            userRole={user.userRole}
+                            place={place}
+                        />
+                    );
+                })
+            ) : (
                 // <>
                 //     <IsolatedAccordeonLandLord
                 //         isAccept={true}
@@ -44,7 +55,6 @@ const ArchiveBookingMobile = () => {
                 //         titleAccordeon={"Artplay(2)"}
                 //     />
                 // </>
-            ) : (
                 <>
                     <div className="py-[14px] px-[12px] bg-[#EBF8FF] mt-[18px] rounded-[6px] pb-[60px]">
                         {books.map((book) => {

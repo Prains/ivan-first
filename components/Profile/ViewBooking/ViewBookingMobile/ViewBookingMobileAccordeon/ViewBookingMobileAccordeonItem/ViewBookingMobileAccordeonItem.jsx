@@ -6,7 +6,7 @@ import { userRed } from "@/images/icons/userRed/userRed";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import api from "@/utils/api";
 
-const ViewBookingMobileAccordeonItem = ({ userRole, places, book, owner, id }) => {
+const ViewBookingMobileAccordeonItem = ({ userRole, username, places, book, owner, id }) => {
     const acceptBookData = {
         data: {
             book: {
@@ -62,7 +62,7 @@ const ViewBookingMobileAccordeonItem = ({ userRole, places, book, owner, id }) =
                     </div>
                     <div className="col-span-5">
                         <p className="overflow-hidden text-ellipsis text-black text-[14px] max-h-[36px] font-medium">
-                            {owner.username}
+                            {userRole === "landlord" ? owner.username : username }
                         </p>
                         <div className="flex gap-4">
                             <p className="text-[#E74362] text-[14px] font-medium">
