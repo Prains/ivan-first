@@ -32,7 +32,7 @@ const LandLordControlPanelDesktop = ({ user }) => {
                 </Link>
                 <Link
                     className="font-medium text-base m-0 flex-center w-[307px] h-[48px] text-white border-white border-solid border-[1px] rounded-md"
-                    href="/profile/landlord-places"
+                    href={links.viewBooks}
                 >
                     Просмотр брони
                 </Link>

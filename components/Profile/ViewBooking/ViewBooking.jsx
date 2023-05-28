@@ -5,8 +5,8 @@ const ViewBooking = () => {
     const landlord = false
     return (
         <section>
-            <ViewBookingMobile landlord={landlord}/>
-            <ViewBookingDesktop landlord={landlord}/>
+            <ViewBookingMobile />
+            <ViewBookingDesktop />
 
         </section>
     );

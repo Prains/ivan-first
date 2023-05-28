@@ -28,33 +28,33 @@ const ViewBookingMobile = () => {
 
     return (
         <section className="block lg:hidden bg-[#0C1622] min-h-[98vh] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover relative px-[16px] py-[16px] w-full">
-            {user.userRole === "landlord" ? (
-                <>
-                    <div className="bg-[#EBF8FF] mt-[18px] rounded-[6px]">
-                        <h3 className="text-black pt-[11px] font-medium text-[20px] px-[16px]">
-                            Artplay
-                        </h3>
-                        <ViewBookingMobileAccordeon
-                            isLandlord={true}
-                            landlord={landlord}
-                            data={activeArr}
-                            titleAccordeon={"Заявки на бронь"}
-                        />
-                        <ViewBookingMobileAccordeon
-                            data={successArr}
-                            titleAccordeon={"Подтвержденная бронь"}
-                        />
-                        <ViewBookingMobileAccordeon
-                            data={pendingArr}
-                            titleAccordeon={"Отклонённая бронь"}
-                        />
-                    </div>
-                    <div>
-                        <IsolatedButton className="w-full mt-[20px] text-[#E74362] text-[14px] bg-transparent border-[#E74362] border-2 rounded-[6px]">
-                            Архив брони
-                        </IsolatedButton>
-                    </div>
-                </>
+            {user.userRole === "landlord" ? (123
+                // <>
+                //     <div className="bg-[#EBF8FF] mt-[18px] rounded-[6px]">
+                //         <h3 className="text-black pt-[11px] font-medium text-[20px] px-[16px]">
+                //             Artplay
+                //         </h3>
+                //         <ViewBookingMobileAccordeon
+                //             isLandlord={true}
+                //             landlord={landlord}
+                //             data={activeArr}
+                //             titleAccordeon={"Заявки на бронь"}
+                //         />
+                //         <ViewBookingMobileAccordeon
+                //             data={successArr}
+                //             titleAccordeon={"Подтвержденная бронь"}
+                //         />
+                //         <ViewBookingMobileAccordeon
+                //             data={pendingArr}
+                //             titleAccordeon={"Отклонённая бронь"}
+                //         />
+                //     </div>
+                //     <div>
+                //         <IsolatedButton className="w-full mt-[20px] text-[#E74362] text-[14px] bg-transparent border-[#E74362] border-2 rounded-[6px]">
+                //             Архив брони
+                //         </IsolatedButton>
+                //     </div>
+                // </>
             ) : (
                 <>
                     <div className="bg-[#EBF8FF] mt-[18px]">

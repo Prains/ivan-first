@@ -8,7 +8,8 @@ import {
 } from "@chakra-ui/react";
 import BookingItemDesktop from "@/components/Profile/ui/BookingItemDesktop/BookingItemDesktop";
 
-export const IsolatedAccordionDesktop = ({ status, title, books, username, userRole }) => {
+export const IsolatedAccordionDesktop = ({ status, books, username, userRole, place }) => {
+    console.log(place)
     return (
         <Accordion
             defaultIndex={[0]}
@@ -18,19 +19,29 @@ export const IsolatedAccordionDesktop = ({ status, title, books, username, userR
             <AccordionItem className="border-0">
                 <h2>
                     <AccordionButton className="rounded-[6px] text-[32px] flex bg-transparent justify-between text-white font-medium">
-                        <h3>{title}</h3>
+                        <h3>{place.title}</h3>
                         <AccordionIcon />
                     </AccordionButton>
                 </h2>
                 <AccordionPanel className="text-black" pb={4}>
-                    {books.map((book) => {
+                    {userRole === "landlord" ?
+                    (place.books.map((book) => {
+                        console.log(book)
+                        return (
+                            <BookingItemDesktop placeTitle={place.title} key={book.id} userRole={userRole} {...book} />
+                        )
+                    }))
+                    :
+                    (books.map((book) => {
                         return (
                             book.book.status === `${status}` && <BookingItemDesktop key={book.id} username={username} userRole={userRole} {...book} />
                         )
 
-                        })}
+                        }))}
                 </AccordionPanel>
             </AccordionItem>
         </Accordion>
     );
 };
+
+
