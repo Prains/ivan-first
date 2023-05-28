@@ -9,7 +9,6 @@ import {
 import BookingItemDesktop from "@/components/Profile/ui/BookingItemDesktop/BookingItemDesktop";
 
 export const IsolatedAccordionDesktop = ({ status, books, username, userRole, place }) => {
-    console.log(place)
     return (
         <Accordion
             defaultIndex={[0]}

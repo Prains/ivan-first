@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import ViewBookingMobileAccordeon from "@/components/Profile/ViewBooking/ViewBookingMobile/ViewBookingMobileAccordeon/ViewBookingMobileAccordeon";
 import useFindUser from "@/hooks/useFindUser";
@@ -28,41 +28,61 @@ const ViewBookingMobile = () => {
 
     return (
         <section className="block lg:hidden bg-[#0C1622] min-h-[98vh] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover relative px-[16px] py-[16px] w-full">
-            {user.userRole === "landlord" ? (123
-                // <>
-                //     <div className="bg-[#EBF8FF] mt-[18px] rounded-[6px]">
-                //         <h3 className="text-black pt-[11px] font-medium text-[20px] px-[16px]">
-                //             Artplay
-                //         </h3>
-                //         <ViewBookingMobileAccordeon
-                //             isLandlord={true}
-                //             landlord={landlord}
-                //             data={activeArr}
-                //             titleAccordeon={"Заявки на бронь"}
-                //         />
-                //         <ViewBookingMobileAccordeon
-                //             data={successArr}
-                //             titleAccordeon={"Подтвержденная бронь"}
-                //         />
-                //         <ViewBookingMobileAccordeon
-                //             data={pendingArr}
-                //             titleAccordeon={"Отклонённая бронь"}
-                //         />
-                //     </div>
-                //     <div>
-                //         <IsolatedButton className="w-full mt-[20px] text-[#E74362] text-[14px] bg-transparent border-[#E74362] border-2 rounded-[6px]">
-                //             Архив брони
-                //         </IsolatedButton>
-                //     </div>
-                // </>
+            {user.userRole === "landlord" ? (
+                <>
+                    <div className="bg-[#EBF8FF] mt-[18px] rounded-[6px]">
+                        {places.map((place) => {
+                            return (
+                                place.books.length > 0 && (
+                                    <ViewBookingMobileAccordeon
+                                        title={place.title}
+                                        key={place.id}
+                                        status="pending"
+                                        userRole={user.userRole}
+                                        place={place}
+                                    />
+                                )
+                            );
+                        })}
+                        {/* <ViewBookingMobileAccordeon
+                            isLandlord={true}
+                            landlord={landlord}
+                            data={activeArr}
+                            titleAccordeon={"Заявки на бронь"}
+                        />
+                        <ViewBookingMobileAccordeon
+                            data={successArr}
+                            titleAccordeon={"Подтвержденная бронь"}
+                        />
+                        <ViewBookingMobileAccordeon
+                            data={pendingArr}
+                            titleAccordeon={"Отклонённая бронь"}
+                        /> */}
+                    </div>
+                    <div>
+                        <IsolatedButton className="w-full mt-[20px] text-[#E74362] text-[14px] bg-transparent border-[#E74362] border-2 rounded-[6px]">
+                            Архив брони
+                        </IsolatedButton>
+                    </div>
+                </>
             ) : (
                 <>
                     <div className="bg-[#EBF8FF] mt-[18px]">
-                        <ViewBookingMobileAccordeon status="pending" title="Заявки на бронь" userRole={user.userRole} books={books} />
-                        <ViewBookingMobileAccordeon status="accepted" title="Подтвержденная бронь" userRole={user.userRole} books={books} />
+                        <ViewBookingMobileAccordeon
+                            status="pending"
+                            title="Заявки на бронь"
+                            userRole={user.userRole}
+                            books={books}
+                        />
+                        <ViewBookingMobileAccordeon
+                            status="accepted"
+                            title="Подтвержденная бронь"
+                            userRole={user.userRole}
+                            books={books}
+                        />
                     </div>
                     <div>
-                    <Link
+                        <Link
                             className="text-sm font-semibold mt-[16px] h-[32px] text-center flex-center bg-[#E74362] rounded-[6px]"
                             href={links.booksArchive}
                         >

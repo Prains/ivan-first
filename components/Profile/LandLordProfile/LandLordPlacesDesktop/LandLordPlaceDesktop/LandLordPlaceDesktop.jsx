@@ -13,7 +13,6 @@ const LandLordPlaceDesktop = ({ status, title, description, photos, id }) => {
             window.location.reload();
         });
     }
-    console.log(photos)
     return (
         <Card
             variant="unstyled"

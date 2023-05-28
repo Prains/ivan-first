@@ -30,7 +30,6 @@ const ActualBooking = () => {
             <div className="h-[90vh] bg-[#EBF8FF] rounded-[6px] py-[16px]">
                 <div className="mt-[16px]">
                     {places.map((place) => {
-                        console.log(place)
                         return (
                             place.books.length > 0 &&
                             place.status === "resolved" && 

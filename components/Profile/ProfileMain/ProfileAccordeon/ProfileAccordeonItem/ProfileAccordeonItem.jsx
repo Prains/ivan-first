@@ -77,7 +77,7 @@ const ProfileAccordeonItem = ({ user, owner, book, id }) => {
                     {user === "landlord" ? (
                         <>
                             <div>
-                                <div className="md:block lg:flex gap-2">
+                                <div className=" lg:flex gap-2">
                                     <IsolatedButton
                                         onClick={handleAcceptBook}
                                         className="w-[100%] p-[8px] lg:w-[116px] text-white bg-transparent border-white border-2 rounded-[6px]"
@@ -86,7 +86,6 @@ const ProfileAccordeonItem = ({ user, owner, book, id }) => {
                                             src={AcceptButtonDesktop}
                                             alt="кнопка"
                                         />
-                                        Принять
                                     </IsolatedButton>
                                     <IsolatedButton
                                         onClick={handleCancelBook}
@@ -96,7 +95,6 @@ const ProfileAccordeonItem = ({ user, owner, book, id }) => {
                                             src={RedCloseIcon}
                                             alt="кнопка"
                                         />
-                                        Отклонить
                                     </IsolatedButton>
                                 </div>
                             </div>

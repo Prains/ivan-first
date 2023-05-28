@@ -9,6 +9,7 @@ import {
 import ViewBookingMobileAccordeonItem from "@/components/Profile/ViewBooking/ViewBookingMobile/ViewBookingMobileAccordeon/ViewBookingMobileAccordeonItem/ViewBookingMobileAccordeonItem";
 
 const ViewBookingMobileAccordeon = ({
+    place,
     title,
     books,
     userRole,
@@ -29,7 +30,19 @@ const ViewBookingMobileAccordeon = ({
                 </h2>
 
                 <AccordionPanel className="text-black" pb={4}>
-                    {books.map((book) => {
+                    { userRole === "landlord" ?
+                    (place.books.map((book) => {
+                        return (
+                            <ViewBookingMobileAccordeonItem
+                            userRole={userRole}
+                            title={title}
+                            key={book.id}
+                            {...book}
+                        />
+                        )})
+                    )
+                    :
+                    (books.map((book) => {
                         return (
                             book.book.status === `${status}` && <ViewBookingMobileAccordeonItem
                             userRole={userRole}
@@ -37,8 +50,8 @@ const ViewBookingMobileAccordeon = ({
                             key={book.id}
                             {...book}
                         />
-                        )
-                    }
+                        )})
+                    
 
                     )}
                 </AccordionPanel>
