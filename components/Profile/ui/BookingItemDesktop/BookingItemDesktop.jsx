@@ -46,7 +46,7 @@ const BookingItemDesktop = ({
 
     return (
         <div>
-           {book.status !== "resolved" && <div className="w-[100%] bg-[#17283F] rounded-[12px] mt-[16px] flex items-center justify-between px-[16px] py-[12px]">
+            <div className="w-[100%] bg-[#17283F] rounded-[12px] mt-[16px] flex items-center justify-between px-[16px] py-[12px]">
                 <div className="flex items-center gap-[12px]">
                     <div>
                         <Image
@@ -100,7 +100,11 @@ const BookingItemDesktop = ({
                                 <div className="flex gap-2">
                                     <p className="text-xl text-[#E74362]">Бронь принята</p>
                                 </div>
-                            ) : (
+                            ) : book.status === "resolved" ?
+                            (                                <div className="flex gap-2">
+                            <p className="text-xl text-[#E74362]">Бронь в архиве</p>
+                        </div>)
+                            : (
                                 <div className="flex gap-2">
                                     <p className="text-xl text-[#E74362]">Бронь отклонена</p>
                                 </div>
@@ -110,7 +114,7 @@ const BookingItemDesktop = ({
                         ""
                     )}
                 </div>
-            </div>}
+            </div>
         </div>
     );
 };

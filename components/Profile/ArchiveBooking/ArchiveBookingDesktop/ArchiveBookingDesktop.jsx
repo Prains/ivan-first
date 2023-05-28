@@ -1,9 +1,7 @@
 "use client";
 import Image from "next/image";
 import { userRed } from "@/images/icons/userRed/userRed";
-import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import { SettingsIcon } from "@/images/icons";
-import ProfileContainerActiveItem from "@/components/Profile/ProfileMain/ProfileContainerActiveItem/ProfileContainerActiveItem";
 import ArchiveBookingContainer from "@/components/Profile/ArchiveBooking/ArchiveBookingContainer/ArchiveBookingContainer";
 import useFindUser from "@/hooks/useFindUser";
 import Link from "next/link";
@@ -49,7 +47,7 @@ const ArchiveBookingDesktop = () => {
                     </p>
                     {user.userRole === "landlord" && (
                         <Link
-                            className="font-medium text-base m-0 flex-center w-[307px] mt-5 h-[48px] text-[#E74362] border-[#E74362] border-solid border-[1px] rounded-md"
+                            className="font-medium text-base m-0 flex-center w-[307px] mt-5 h-[48px] text-white border-white border-solid border-[1px] rounded-md"
                             href={links.profile}
                         >
                             Добавить площадку
@@ -57,7 +55,7 @@ const ArchiveBookingDesktop = () => {
                     )}
                     {user.userRole === "landlord" ? (
                         <Link
-                            className="font-medium text-base m-0 flex-center w-[307px] h-[48px] text-[#E74362] border-[#E74362] border-solid border-[1px] rounded-md"
+                            className="font-medium text-base m-5 flex-center w-[307px] h-[48px] text-white border-white border-solid border-[1px] rounded-md"
                             href={links.yourPlaces}
                         >
                             Ваши площадки
@@ -70,16 +68,22 @@ const ArchiveBookingDesktop = () => {
                             Текущие брони
                         </Link>
                     )}
-                    <div className="flex-center-col relative w-[100%] mt-[20px]">
+                    <div className="flex-center-col relative w-[100%]">
                         {user.userRole === "landlord" ? (
                             <>
+                                                            <Link
+                                    className="font-medium text-base m-0 flex-center w-[307px] h-[48px] text-white border-white border-solid border-[1px] rounded-md"
+                                    href={links.viewBooks}
+                                >
+                                    Просмотр брони
+                                </Link>
                                 {/* <span
                                         className='absolute -right-2 -top-2 z-10 text-white text-[16px] py-[2px] px-[10px] font-medium bg-[#E74362] rounded-[50px]'>1</span> */}
                                 <Link
-                                    className="font-medium text-base m-0 flex-center w-[307px] mt-5 h-[48px] text-[#E74362] border-[#E74362] border-solid border-[1px] rounded-md"
-                                    href={links.profile}
+                                    className="font-medium text-base m-0 mt-5 flex-center w-[307px] h-[48px] text-[#E74362] border-[#E74362] border-solid border-[1px] rounded-md"
+                                    href={links.booksArchive}
                                 >
-                                    Просмотр брони
+                                    Архив брони
                                 </Link>
                             </>
                         ) : (
@@ -114,7 +118,12 @@ const ArchiveBookingDesktop = () => {
                             : "История брони"}
                     </h3>
                     {user.userRole === "landlord" ? (
-                        123
+                        places.map((place) => {
+                            return (
+                                <ArchiveBookingContainer key={place.id} userRole={user.userRole} place={place} />
+                            )
+                        })
+                        
                     ) : (
                         <ArchiveBookingContainer
                             username={user.username}

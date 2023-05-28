@@ -2,12 +2,17 @@ import React from 'react';
 import ArchiveBookingContainerItem
     from "@/components/Profile/ArchiveBooking/ArchiveBookingContainer/ArchiveBookingContainerItem/ArchiveBookingContainerItem";
 
-const ArchiveBookingContainer = ({userRole, books}) => {
+const ArchiveBookingContainer = ({userRole, books, place}) => {
     return (
         <div className='flex flex-col justify-start'>
             {userRole === "landlord" ?
-            123
-        
+            (
+                place.books.map((book) => {
+                    return (
+                        book.book.status === "resolved" && <ArchiveBookingContainerItem place={place.title} key={book.id} bookll={book} userRole={userRole} />
+                    )
+                })
+            )
             :
             (
                 books.map((book) => {

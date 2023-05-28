@@ -26,7 +26,6 @@ export const IsolatedAccordionDesktop = ({ status, books, username, userRole, pl
                 <AccordionPanel className="text-black" pb={4}>
                     {userRole === "landlord" ?
                     (place.books.map((book) => {
-                        console.log(book)
                         return (
                             <BookingItemDesktop placeTitle={place.title} key={book.id} userRole={userRole} {...book} />
                         )
