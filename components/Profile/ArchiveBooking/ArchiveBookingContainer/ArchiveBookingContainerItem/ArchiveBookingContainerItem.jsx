@@ -1,51 +1,84 @@
-import React from 'react';
+import React from "react";
 import Image from "next/image";
-import {userRed} from "@/images/icons/userRed/userRed";
-import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
+import { userRed } from "@/images/icons/userRed/userRed";
 import IsolatedModal from "@/components/ui/IsolatedModal/IsolatedModal";
 
-const ArchiveBookingContainerItem = ({landlord,  title, image, date}) => {
-
-    if(landlord) {
-        image = userRed
-    }
-
-
+const ArchiveBookingContainerItem = ({
+    book,
+    places,
+    userRole,
+    bookll,
+    place,
+}) => {
     return (
         <div>
-            <div
-                className='w-[100%] bg-[#17283F] rounded-[12px] mt-[16px] flex items-center justify-between px-[16px] py-[12px]'>
-                <div className='flex items-center gap-[12px]'>
+            <div className="w-[100%] bg-[#17283F] rounded-[12px] mt-[16px] flex items-center justify-between px-[16px] py-[12px]">
+                <div className="flex items-center gap-[12px]">
                     <div>
-                        <Image className='object-cover h-[75px] w-[75px]' src={image} alt='фото'/>
+                        <Image
+                            className="object-cover h-[75px] w-[75px]"
+                            width="75"
+                            height="75"
+                            src={
+                                userRole === "landlord"
+                                    ? userRed
+                                    : `http://89.232.167.133:1337${places[0].photos[0].url}`
+                            }
+                            alt="фото"
+                        />
                     </div>
                     <div>
-                        {
-                            landlord ?  <p className='text-[20px] text-white font-medium'>{title}</p> :  <p className='text-[20px] text-white font-medium'>{title}</p>
-                        }
-                        <p className='text-[20p] text-white font-medium'>21 февраль <span className='text-[#E74362]'>18.00 - 22.00</span>
-                        </p>
+                        {userRole === "landlord" ? (
+                            <>
+                                <p>{place}</p>
+                                <p className="text-[20px] text-white font-medium">
+                                    {bookll.owner.username}
+                                </p>
+                            </>
+                        ) : (
+                            <p className="text-[20px] text-white font-medium">
+                                {places[0].title}
+                            </p>
+                        )}
+                        {userRole === "landlord" ? (
+                            <div className="flex gap-4">
+                                <p className="text-[20p] text-white font-medium">
+                                    {bookll.book.startDate}
+                                </p>
+                                <span className="text-[#E74362]">
+                                    {bookll.book.time}
+                                </span>
+                            </div>
+                        ) : (
+                            <div className="flex gap-4">
+                                <p className="text-[20p] text-white font-medium">
+                                    {book.startDate}
+                                </p>
+                                <span className="text-[#E74362]">
+                                    {book.time}
+                                </span>
+                            </div>
+                        )}
                     </div>
                 </div>
                 <div>
-                    {
-                        landlord ? <>
-                                <div>
-                                    <div>
-                                        <IsolatedButton
-                                            className='w-[100%] lg:w-[240px] text-[#E74362] bg-transparent border-[#E74362] border-2 mt-[8px] rounded-[6px]'>Детали</IsolatedButton>
-                                    </div>
-                                </div>
-                            </> :
-                            <>
-                            <div className='flex flex-col '>
-                                <IsolatedModal title={title} image={image} date={date}/>
-                                <IsolatedButton
-                                    className='md:w-[120px] lg:w-[240px] text-[#D9D9D9] bg-transparent border-[#D9D9D9] border-2 mt-[8px] rounded-[6px]'>Детали</IsolatedButton>
-
+                    {userRole === "landlord" ? (
+                        ""
+                    ) : (
+                        <>
+                            <div className="flex flex-col ">
+                                <IsolatedModal
+                                    title={places[0].title}
+                                    image={{
+                                        width: "75",
+                                        height: "75",
+                                        src: `http://89.232.167.133:1337${places[0].photos[0].url}`,
+                                    }}
+                                    date={`${book.startDate} ${book.time}`}
+                                />
                             </div>
-                            </>
-                    }
+                        </>
+                    )}
                 </div>
             </div>
         </div>

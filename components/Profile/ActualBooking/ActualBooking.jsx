@@ -1,41 +1,54 @@
+"use client";
 import IsolatedButton from "@/components/ui/IsolatedButton/IsolatedButton";
 import ActualBookingItem from "@/components/Profile/ActualBooking/ActualBookingItem/ActualBookingItem";
-import {userRed} from "@/images/icons/userRed/userRed";
+import { userRed } from "@/images/icons/userRed/userRed";
+import Link from "next/link";
+import links from "@/utils/links";
+import useFindUser from "@/hooks/useFindUser";
+import { useEffect, useState } from "react";
+import api from "@/utils/api";
+import ActualBookingList from "./ActualBookingList/ActualBookingList";
 
 const ActualBooking = () => {
-    // заявки на бронь
+    const user = useFindUser();
 
-    const data = [
-        {
-            id: 1,
-            name: 'Серый Волк',
-            date: '21 мая 18.00 - 22.00',
-            image: userRed,
-        },
-        {
-            id: 2,
-            name: 'Иван Царевич',
-            date: '22 мая 18.00 - 24.00',
-            image: userRed,
-        }, {
-            id: 3,
-            name: 'Иван Царевич',
-            date: '22 мая 18.00 - 24.00',
-            image: userRed,
-        },
-    ]
+    if (!user) {
+        return null;
+    }
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [places, setPlaces] = useState([]);
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+        api.getUserPlaces(user.id).then((res) => setPlaces(res.places));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
-        <section className='bg-[#0C1622] h-[100vh] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover relative px-[16px] py-[16px] w-full'>
-            <div className='h-[90vh] bg-[#EBF8FF] rounded-[6px] px-[12px] py-[16px]'>
-                <div className='mt-[16px]'>
-                    {
-                        data.map(item => <ActualBookingItem key={item.id} {...item}/>)
-                    }
+        <section className="bg-[#0C1622] min-h-[98vh] bg-bgAuth-mobile bg-top bg-no-repeat bg-cover relative px-[16px] py-[16px] w-full">
+            <div className="h-[90vh] bg-[#EBF8FF] rounded-[6px] py-[16px]">
+                <div className="mt-[16px]">
+                    {places.map((place) => {
+                        return (
+                            place.books.length > 0 &&
+                            place.status === "resolved" && 
+                            place.archived === false && 
+                            <ActualBookingList {...place} image={userRed}/>
+                        )
+                    })}
+                    {/* {data.map((item) => (
+                        <ActualBookingItem key={item.id} {...item} />
+                    ))} */}
                 </div>
             </div>
             <div>
-                <IsolatedButton className='w-full mt-[20px] text-[#E74362] text-[14px] bg-transparent border-[#E74362] border-2 rounded-[6px]'>Ваши площадки</IsolatedButton>
+                <Link
+                    className="text-sm font-medium mt-[16px] h-[40px] text-center flex-center bg-transparent border-[#E74362] border-[1px] text-[#E74362] rounded-[6px]"
+                    href={links.yourPlaces}
+                >
+                    Ваши площадки
+                </Link>
             </div>
         </section>
     );

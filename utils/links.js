@@ -4,6 +4,7 @@ const links = {
   register: "/register",
   login: "/login",
   forgotPassword: "/forgot-password",
+  profile: "/profile",
   placesArchive: "/profile/places-archive",
   yourPlaces: "/profile/your-places",
   viewBooks: "/profile/books/view",

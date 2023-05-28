@@ -23,7 +23,7 @@ const ArchiveDesktopPlace = ({ id, title, description, photos }) => {
                     <Image
                         width="378"
                         height="190"
-                        src={`http://89.232.167.133:1337${photos[0].url}`}
+                        src={photos ? `http://89.232.167.133:1337${photos[0].url}` : ''}
                         alt="Фото площадки"
                         className="h-full opacity-60"
                     />

@@ -1,31 +1,45 @@
-"use client"
+"use client";
 import {
     Accordion,
     AccordionItem,
     AccordionButton,
     AccordionPanel,
     AccordionIcon,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react";
 import BookingItemDesktop from "@/components/Profile/ui/BookingItemDesktop/BookingItemDesktop";
 
-const IsolatedAccordionDesktop = ({titleAccordeon, data, isPending, isActive}) => {
+export const IsolatedAccordionDesktop = ({ status, books, username, userRole, title, place }) => {
     return (
-        <Accordion defaultIndex={[0]} allowMultiple className='bg-transparent rounded-[6px]'>
-            <AccordionItem className='border-0'>
+        <Accordion
+            defaultIndex={[0]}
+            allowMultiple
+            className="bg-transparent rounded-[6px]"
+        >
+            <AccordionItem className="border-0">
                 <h2>
-                    <AccordionButton className='rounded-[6px] text-[32px] flex bg-transparent justify-between text-white font-medium'>
-                        <h3>{titleAccordeon}</h3>
+                    <AccordionButton className="rounded-[6px] text-[32px] flex bg-transparent justify-between text-white font-medium">
+                        <h3>{userRole === "landlord" ? place.title : title}</h3>
                         <AccordionIcon />
                     </AccordionButton>
                 </h2>
-                <AccordionPanel className='text-black' pb={4}>
-                    {
-                        data.map(item => <BookingItemDesktop isActive={isActive} isPending={isPending} key={item.id} title={item.title} date={item.date} image={item.image}/>)
-                    }
+                <AccordionPanel className="text-black" pb={4}>
+                    {userRole === "landlord" ?
+                    (place.books.map((book) => {
+                        return (
+                            <BookingItemDesktop placeTitle={place.title} key={book.id} userRole={userRole} {...book} />
+                        )
+                    }))
+                    :
+                    (books.map((book) => {
+                        return (
+                            book.book.status === `${status}` && <BookingItemDesktop key={book.id} username={username} userRole={userRole} {...book} />
+                        )
+
+                        }))}
                 </AccordionPanel>
             </AccordionItem>
         </Accordion>
     );
 };
 
-export default IsolatedAccordionDesktop;
+

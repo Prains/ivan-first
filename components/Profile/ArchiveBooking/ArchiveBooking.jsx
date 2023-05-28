@@ -7,8 +7,8 @@ const ArchiveBooking = () => {
     // архив брони
     return (
         <div>
-            <ArchiveBookingDesktop landlord={landlord} />
-            <ArchiveBookingMobile landlord={landlord} />
+            <ArchiveBookingDesktop />
+            <ArchiveBookingMobile />
         </div>
     );
 };
